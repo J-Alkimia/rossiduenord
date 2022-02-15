@@ -20,3 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('financial/dashboard','HomeController@financialHome')->name('financial.dashboard')->middleware('is_financial');
