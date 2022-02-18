@@ -71,5 +71,7 @@ class Kernel extends HttpKernel
         'asseverator' => \App\Http\Middleware\Asseverator::class,
         'manager' => \App\Http\Middleware\Manager::class,
         'provider' => \App\Http\Middleware\Provider::class,
+        'agent' => \App\Http\Middleware\Agent::class,
+        'condominium' => \App\Http\Middleware\Condominium::class,
     ];
 }

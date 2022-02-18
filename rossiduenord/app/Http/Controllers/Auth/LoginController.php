@@ -76,6 +76,12 @@ class LoginController extends Controller
             if (auth()->user()->role == 'provider') {
                 return redirect()->route('provider.dashboard');
             }
+            if (auth()->user()->role == 'lv1_agent' || 'lv2_agent') {
+                return redirect()->route('agent.dashboard');
+            }
+            if (auth()->user()->role == 'condominium') {
+                return redirect()->route('condominium.dashboard');
+            }
         } else {
             return redirect()->route('login')
             ->with('error', 'Indirizzo Email e password Errati!');

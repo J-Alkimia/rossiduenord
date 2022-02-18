@@ -74,6 +74,11 @@
                                 <option value="asseverator">Asseveratore</option>
                                 <option value="manager">Manager</option>
                                 <option value="provider">Fornitore</option>
+                                <option value="condominium">Condominio</option>
+                            </optgroup>
+                            <optgroup label="Agenti immobiliari">
+                                <option value="lv1_agent">Agente lv.1</option>
+                                <option value="lv2_agent">Agente lv.2</option>
                             </optgroup>
                           </select>
                         </div>

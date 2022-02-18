@@ -9,10 +9,13 @@ use App\Bank;
 use App\Business;
 use App\Asseverator;
 use App\Collaborator;
+use App\Condominium;
 use App\Consultant;
 use App\Manager;
 use App\Provider;
 use App\Http\Controllers\Controller;
+use App\Lv1_agent;
+use App\Lv2_agent;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -162,6 +165,34 @@ class RegisterController extends Controller
                 'password' => $user->password,
             ]);
         }
+        if ($data['role'] == 'lv1_agent') {
+
+            $user = Lv1_agent::create([
+                'user_id' => $user->id,
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => $user->password,
+            ]);
+        }
+        if ($data['role'] == 'lv2_agent') {
+
+            $user = Lv2_agent::create([
+                'user_id' => $user->id,
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => $user->password,
+            ]);
+        }
+        if ($data['role'] == 'condominium') {
+
+            $user = Condominium::create([
+                'user_id' => $user->id,
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => $user->password,
+            ]);
+        }
+
         return $user;
     }
 }

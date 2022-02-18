@@ -66,5 +66,15 @@ Route::middleware('provider')->namespace('Provider')->name('provider.')->prefix(
     Route::get('/dashboard', 'HomeController@providerHome')->name('dashboard');
 });
 
+//Route Agent
+Route::middleware('agent')->namespace('Agent')->name('agent.')->prefix('agent')->group(function () {
+    Route::get('/dashboard', 'HomeController@agentHome')->name('dashboard');
+});
+
+//Route Condominium
+Route::middleware('condominium')->namespace('Condominium')->name('condominium.')->prefix('condominium')->group(function () {
+    Route::get('/dashboard', 'HomeController@condominiumHome')->name('dashboard');
+});
+
 
 
