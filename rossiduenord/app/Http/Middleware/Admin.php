@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class IsFinancial
+class Admin
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,9 @@ class IsFinancial
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->is_financial == 1){
+        if(Auth()->user()->role == 'admin'){
             return $next($request);
         }
-        return redirect('home')->with('error', "Non hai i permessi di accesso!");
+        return redirect('home');
     }
 }

@@ -49,14 +49,15 @@ class LoginController extends Controller
         ]);
 
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
-            if (auth()->user()->is_financial == 1) {
+            if (auth()->user()->role == 'financial') {
                 return redirect()->route('financial.dashboard');
-            } else {
-                return redirect()->route('home');
+            } 
+            if (auth()->user()->role == 'admin') {
+                return redirect()->route('admin.dashboard');
             }
         } else {
             return redirect()->route('login')
-            ->with('error', 'Email-Address And Password Are Wrong.');
+            ->with('error', 'Indirizzo Email e password Errati!');
         }
     }
 }

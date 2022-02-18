@@ -19,6 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'pageController@index')->name('home');
 
-Route::get('financial/dashboard','HomeController@financialHome')->name('financial.dashboard')->middleware('is_financial');
+Route::middleware('admin')->namespace('Admin')->name('admin.')->prefix('admin')->group(function () {
+    Route::get('/dashboard', 'HomeController@adminHome')->name('dashboard');
+});
+
+Route::middleware('financial')->namespace('Financial')->name('financial.')->prefix('financial')->group(function () {
+    Route::get('/dashboard', 'HomeController@financialHome')->name('dashboard');
+});
+

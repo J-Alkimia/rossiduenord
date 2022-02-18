@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Financial;
+use App\Admin;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -53,6 +55,9 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => ['required', 'string'],
+            'referent' => ['nullable', 'string'],
+            'referent_phone' => ['nullable', 'string'],
         ]);
     }
 
@@ -64,10 +69,33 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role' => $data['role'],
         ]);
+
+        if($data['role'] == 'admin') {
+
+            $user = Admin::create([
+                'user_id' =>$user->id,
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => $user->password,
+            ]);
+        }
+        if($data['role'] == 'financial') {
+
+            $user = Financial::create([
+                'user_id' =>$user->id,
+                'name' => $data['name'],
+                //'referent' => $data['referent'],
+                //'referent_phone' => $data['referent_phone'],
+                'email' => $data['email'],
+                'password' => $user->password,
+            ]);
+        }
+        return $user;
     }
 }
