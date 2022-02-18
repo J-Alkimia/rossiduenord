@@ -49,11 +49,32 @@ class LoginController extends Controller
         ]);
 
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
-            if (auth()->user()->role == 'financial') {
-                return redirect()->route('financial.dashboard');
-            } 
             if (auth()->user()->role == 'admin') {
                 return redirect()->route('admin.dashboard');
+            }
+            if (auth()->user()->role == 'financial') {
+                return redirect()->route('financial.dashboard');
+            }
+            if (auth()->user()->role == 'bank') {
+                return redirect()->route('bank.dashboard');
+            }
+            if (auth()->user()->role == 'business') {
+                return redirect()->route('business.dashboard');
+            }
+            if (auth()->user()->role == 'collaborator') {
+                return redirect()->route('collaborator.dashboard');
+            }
+            if (auth()->user()->role == 'consultant') {
+                return redirect()->route('consultant.dashboard');
+            }
+            if (auth()->user()->role == 'asseverator') {
+                return redirect()->route('asseverator.dashboard');
+            }
+            if (auth()->user()->role == 'manager') {
+                return redirect()->route('manager.dashboard');
+            }
+            if (auth()->user()->role == 'provider') {
+                return redirect()->route('provider.dashboard');
             }
         } else {
             return redirect()->route('login')

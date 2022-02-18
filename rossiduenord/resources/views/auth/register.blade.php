@@ -61,11 +61,20 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                          <label for="role"></label>
-                          <select class="form-control" name="role" id="role">
-                            <option value="admin">Admin</option>
-                            <option value="financial">Financial</option>
+                        <div class="form-group row">
+                          <label for="role" class="col-md-4 col-form-label text-md-right">Scegli il ruolo!</label>
+                          <select class="form-control col-md-6" name="role" id="role">
+                            <optgroup label="Ruoli">
+                                <option value="admin">Admin</option>
+                                <option value="financial">Finanziaria</option>
+                                <option value="bank">Banca</option>
+                                <option value="business">Impresa</option>
+                                <option value="collaborator">Collaboratore</option>
+                                <option value="consultant">Consulente</option>
+                                <option value="asseverator">Asseveratore</option>
+                                <option value="manager">Manager</option>
+                                <option value="provider">Fornitore</option>
+                            </optgroup>
                           </select>
                         </div>
 
