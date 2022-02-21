@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
-Route::get('/home', 'pageController@index')->name('home');
+Route::get('/', 'pageController@index')->name('login');
 
 //Route Admin
 Route::middleware('admin')->namespace('Admin')->name('admin.')->prefix('admin')->group(function () {

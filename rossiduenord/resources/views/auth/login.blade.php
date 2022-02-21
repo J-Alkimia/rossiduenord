@@ -1,21 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container center">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="login popup">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="title-login">{{ __('Accedi direttamente') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <div class="form-group row justify-content-center">
+                            <div class="row-custom">
+                                <div class="d-flex">
+                                    <div class="user-login">
+                                        <img src="../../img/icon/user.svg" alt="">
+                                    </div>
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                </div>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -25,11 +28,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                        <div class="form-group row justify-content-center">
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            <div class="row-custom">
+                                <div class="d-flex">
+                                    <div class="user-login">
+                                        <img src="../../img/icon/padlock.svg" alt="">
+                                    </div>
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="current-password">
+                                </div>
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -39,27 +46,27 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                        <div class="form-group row justify-content-center">
+                            <div class="row-custom">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Ricordami') }}
                                     </label>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                        <div class="form-group row justify-content-center">
+                            <div class="row-custom">
+                                <button type="submit" class="btn-login">
+                                    {{ __('Accedi') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                    <a class="ml-5 pass-forghet" href="{{ route('password.request') }}">
+                                        {{ __('Password dimenticata?') }}
                                     </a>
                                 @endif
                             </div>
