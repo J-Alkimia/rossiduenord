@@ -5,16 +5,16 @@
 @import 'variables';
 
 //common
-@import 'partials/common.scss';
+@import 'partials/common';
 
 //header
-@import 'partials/header.scss';
+@import 'partials/header';
 
-//navbar
-@import 'partials/navbar.scss';
+//main
+@import 'partials/main';
 
 //login
-@import 'partials/login.scss';
+@import 'partials/login';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';

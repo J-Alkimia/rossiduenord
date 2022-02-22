@@ -1,0 +1,51 @@
+main{
+    background-color: $bg-body;
+    height: 100vh;
+}
+.content-main{
+    padding: 50px;
+
+    .box{
+        background-color: white;
+        width: 100%;
+        padding: 20px;
+        margin-top: 20px;
+
+        .type-number{
+            width: 60px;
+            padding: 2px 5px;
+            background-color: $bg-body;
+            color: #383D3F;
+            font-size: 15px;
+            margin: 0 10px;
+        }
+        .search{
+            width: 100%;
+            border: 1px solid #61a4d7;
+            border-radius: 20px;
+            padding: 3px 10px;
+
+            &:focus-visible{
+                outline: none;
+            }
+            
+        }
+        .img-search{
+            position: absolute;
+            right: 15px;
+            top: 6px;
+        }
+
+        table{
+            tr{
+                border-bottom: 1px solid #707070;
+            }
+            td{
+                border-bottom: 1px solid #707070;
+                border-right: 1px solid #707070;
+                padding: 20px 10px;
+                height: 30px;
+            }
+        }
+    }
+}

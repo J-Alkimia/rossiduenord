@@ -21,11 +21,8 @@
 </head>
 
 <style>
-    body {
-        background-image: url(../../img/AdobeStock_484116254.png)
-    }
 </style>
-<body>
+<body style="background-image:url({{ asset('/img/sfondo.png')}})">
     <div id="app">
         <main class="py-4">
             @yield('content')
