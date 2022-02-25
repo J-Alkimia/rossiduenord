@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Bank\FolderController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -49,6 +50,8 @@ Route::middleware('bank')
 ->group(function () {
     Route::get('/dashboard', 'HomeController@bankHome')->name('dashboard');
     Route::resource('users', 'UserController');
+    Route::resource('folder', 'FolderController');
+    Route::resource('file', 'FileController');
 });
 
 

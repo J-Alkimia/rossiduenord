@@ -24,4 +24,9 @@ class Bank extends Authenticatable
         return $this->belongsTo(User::class);
     }
 
+    public function folders()
+    {
+        return $this->hasMany(Folder::class);
+    }
+
 }

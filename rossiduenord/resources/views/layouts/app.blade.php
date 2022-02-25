@@ -22,9 +22,9 @@
 
 <style>
 </style>
-<body style="background-image:url({{ asset('/img/sfondo.png')}})">
+<body>
     <div id="app">
-        <main class="py-4">
+        <main class="sfondo" class="py-4">
             @yield('content')
         </main>
     </div>

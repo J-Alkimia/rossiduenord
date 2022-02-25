@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -25,9 +26,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(array $data)
     {
-        return view('bank.users.create');
+        return view('bank.users.create', compact('data'));
     }
 
     /**
@@ -45,8 +46,9 @@ class UserController extends Controller
             'password' => 'required | string | min:8 | confirmed'
         ]);
 
+        $password = Hash::make($request->password);
+        $validated['password'] = $password;
         User::create($validated);
-        //$user->user()->associate(Auth::user()->id)->save();
         return redirect()->route('bank.users.index')->with('message', "Nuovo utente inserito!");
     }
 
@@ -84,10 +86,12 @@ class UserController extends Controller
         $validated = $request->validate([
             'role' => 'required | string',
             'name' => 'required | string | min:3 | max:100',
-            'email' => 'required | string | email | max:100 | unique:users',
-            'password' => 'required | string | min:8 | confirmed'
+            'email' => 'required | string | email | max:100',
+            'password' => 'required |string | min:8 | confirmed'
         ]);
 
+        $password = Hash::make($request->password);
+        $validated['password'] = $password;
         $user->update($validated);
         //$user->user()->associate(Auth::user()->id)->save();
         return redirect()->route('bank.users.index')->with('message', "utente modificato!");
