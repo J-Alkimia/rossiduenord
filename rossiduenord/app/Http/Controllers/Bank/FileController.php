@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers\Bank;
 
-use App\File;
-use App\Folder;
-use App\User;
-use App\Http\Middleware\Bank;
+use App\{File, Folder};
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Auth;
 class FileController extends Controller
 {
-    //$files = File::where('id', Auth::user()->id)->get();
 
     /**
      * Show the form for creating a new resource.

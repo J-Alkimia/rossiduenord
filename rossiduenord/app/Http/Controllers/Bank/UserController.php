@@ -107,6 +107,6 @@ class UserController extends Controller
     {   
         $user = User::find($id);
         $user->delete();
-        return redirect()->back()->with('message', "Utente e stato eliminato!");
+        return redirect()->back()->with('message', "Utente $user->name e stato eliminato!");
     }
 }

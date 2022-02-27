@@ -60,7 +60,7 @@
                                         Modifica
                                     </a>
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del{{$folder->id}}">
-                                    elimina
+                                        elimina
                                     </button>
 
                                     <div class="modal fade" id="del{{$folder->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

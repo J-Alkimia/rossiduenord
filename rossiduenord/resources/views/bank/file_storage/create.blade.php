@@ -1,10 +1,5 @@
 @extends('bank.layouts.bank')
-{{--         $folders = Folder::all();
-        $id = $folders[0]->getAttribute('id');
-        
-        $file = new File($validated);
-        $file->folder()->associate($id)->save();
- --}}
+
 @section('content')
     <div class="content-main">
         <div class="box">

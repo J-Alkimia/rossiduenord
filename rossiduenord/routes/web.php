@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Bank\FolderController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -51,8 +50,6 @@ Route::middleware('bank')
     Route::get('/dashboard', 'HomeController@bankHome')->name('dashboard');
     Route::resource('users', 'UserController');
     Route::resource('folder', 'FolderController');
-    Route::get('/file/create', 'folderController@fileCreate')->name('folder.file.create');
-    Route::post('/file/{file}/store', 'folderController@fileStore')->name('folder.file.store');
     Route::resource('file', 'FileController');
 });
 
