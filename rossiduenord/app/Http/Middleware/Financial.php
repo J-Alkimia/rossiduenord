@@ -19,6 +19,6 @@ class Financial
         if(Auth()->user()->role == 'financial') {
             return $next($request);
         }
-        return redirect('home');
+        return redirect('login');
     }
 }

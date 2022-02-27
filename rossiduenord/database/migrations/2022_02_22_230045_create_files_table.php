@@ -16,7 +16,7 @@ class CreateFilesTable extends Migration
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('folder_id')->unsigned();
-            $table->foreign('folder_id')->references('id')->on('folders');
+            $table->foreign('folder_id')->references('id')->on('folders')->onDelete('cascade');
             $table->string('title');
             $table->string('file');
             $table->timestamps();
@@ -30,6 +30,11 @@ class CreateFilesTable extends Migration
      */
     public function down()
     {
+        Schema::table('files', function (Blueprint $table) {
+            $table->dropForeign(['folder_id']);
+            $table->dropColumn('folder_id');
+        });
+
         Schema::dropIfExists('files');
     }
 }

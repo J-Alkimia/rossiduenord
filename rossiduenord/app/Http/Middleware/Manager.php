@@ -18,6 +18,6 @@ class Manager
         if (Auth()->user()->role == 'manager') {
             return $next($request);
         }
-        return redirect('home');
+        return redirect('login');
     }
 }

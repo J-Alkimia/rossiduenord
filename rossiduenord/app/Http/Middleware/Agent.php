@@ -18,6 +18,6 @@ class Agent
         if (Auth()->user()->role == 'lv1_agent' || 'lv2_agent') {
             return $next($request);
         }
-        return redirect('home');
+        return redirect('login');
     }
 }

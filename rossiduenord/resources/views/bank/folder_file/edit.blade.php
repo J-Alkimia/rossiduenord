@@ -3,7 +3,8 @@
 @section('content')
     <div class="content-main">
         <div class="box">
-            <span class="black text-md">Modifica cartella: {{ $folder->name }}</span>
+            
+            <span class="black text-md"><b>Modifica cartella:</b> {{ $folder->name }}</span>
             <hr class="bg-black">
 
             @include('bank.layouts.partials.error')    
@@ -28,7 +29,7 @@
                 <div class="form-group">
                     <label for="type" class="text">Cartella</label>
                     <select style="height: 47px!important" class="form-control" name="type" id="type">
-                        <option value="">{{$folder->type}}</option>
+                        <option selected value="{{$folder->type}}">{{$folder->type}}</option>
                         <option value="documenti vari">documenti vari</option>
                         <option value="documenti fiscali">documenti fiscali</option>
                     </select>

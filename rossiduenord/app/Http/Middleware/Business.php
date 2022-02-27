@@ -18,6 +18,6 @@ class Business
         if (Auth()->user()->role == 'business') {
             return $next($request);
         }
-        return redirect('home');
+        return redirect('login');
     }
 }

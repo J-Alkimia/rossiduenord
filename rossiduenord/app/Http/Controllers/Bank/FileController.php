@@ -19,10 +19,10 @@ class FileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Folder $folder, File $file)
     {
         $folders = Folder::all();
-        return view('bank.file_storage.create', compact('folders'));
+        return view('bank.file_storage.create', compact('folders', 'file'));
     }
 
     /**
@@ -42,8 +42,14 @@ class FileController extends Controller
         $bank_file = Storage::put('banc_file', $validated['file']);
         $validated['file'] = $bank_file;
 
+/*         $folders = Folder::all();
+        $id = $folders[1]->getAttribute('id');
+        $file = new File($validated);
+        $file->folder()->associate($id)->save();
+ */        
+        $folder = $validated['folder_id'];
         File::create($validated);
-        return redirect()->route('bank.folder.show')->with('message', "Nuovo file inserito!");
+        return redirect()->route('bank.folder.show', compact('folder'))->with('message', "Nuovo file inserito!");
     }
 
     /**
@@ -77,22 +83,23 @@ class FileController extends Controller
      * @param  \App\File  $file
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, File $file, Folder $folder)
+    public function update(Request $request, File $file)
     {
         $validated = $request->validate([
             'title' => 'nullable | string',
             'folder_id' => 'nullable | integer | exists:folders,id',
             'file' => 'nullable',
         ]);
-        //dd($validated);
-        if($request->hasFile('file')){
+
+        if(array_key_exists('file', $validated)){
+            Storage::delete($file->file);
             $bank_file = Storage::put('banc_file', $validated['file']);
             $validated['file'] = $bank_file;
         }
+        
         $file->update($validated);
         $folder = $validated['folder_id'];
         return redirect()->route('bank.folder.show', compact('folder'))->with('message', "file modificato!");
-
     }
 
     /**

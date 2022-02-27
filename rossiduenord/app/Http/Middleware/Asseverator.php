@@ -18,6 +18,6 @@ class Asseverator
         if (Auth()->user()->role == 'asseverator') {
             return $next($request);
         }
-        return redirect('home');
+        return redirect('login');
     }
 }

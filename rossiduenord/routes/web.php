@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', 'pageController@index')->name('login');
+Route::get('/', 'pageController@index');
 
 //Route Admin
 Route::middleware('admin')
@@ -51,6 +51,8 @@ Route::middleware('bank')
     Route::get('/dashboard', 'HomeController@bankHome')->name('dashboard');
     Route::resource('users', 'UserController');
     Route::resource('folder', 'FolderController');
+    Route::get('/file/create', 'folderController@fileCreate')->name('folder.file.create');
+    Route::post('/file/{file}/store', 'folderController@fileStore')->name('folder.file.store');
     Route::resource('file', 'FileController');
 });
 

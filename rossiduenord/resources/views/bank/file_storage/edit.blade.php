@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-main">
         <div class="box">
-            <span class="black text-md">Modifica file: {{ $file->title}}</span>
+            <span class="black text-md"><b>Modifica file:</b> {{ $file->title}}</span>
             <hr class="bg-black">
 
             @include('bank.layouts.partials.error')    
@@ -35,9 +35,11 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <p>{{asset($file->file)}}</p>
-                    <label for="file" class="text">Modifica file</label>
-                    <input value="{{asset('storage/' . $file->file)}}" type="file" name="file" id="file">
+                    <p><b>Attualmente caricato: </b> {{asset($file->file)}}</p>
+                    <label for="file" class="text">Carica nuovo file</label>
+                    <div>
+                        <input value="{{$file->file}}" type="file" name="file" id="file">
+                    </div>
                 </div>
                 <button type="submit" class="add-button position-relative">
                     {{ __('Salva file') }}

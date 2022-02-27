@@ -26,9 +26,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(array $data)
+    public function create()
     {
-        return view('bank.users.create', compact('data'));
+        return view('bank.users.create');
     }
 
     /**

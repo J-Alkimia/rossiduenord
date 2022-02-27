@@ -18,6 +18,6 @@ class Provider
         if (Auth()->user()->role == 'provider') {
             return $next($request);
         }
-        return redirect('home');
+        return redirect('login');
     }
 }

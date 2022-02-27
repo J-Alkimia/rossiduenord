@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-main">
         <div class="box">
-            <span class="black text-md">Crea utente</span>
+            <span class="black text-md"><b>Crea utente</b></span>
             <hr class="bg-black">
 
             @include('bank.layouts.partials.error')    

@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-main">
         <div class="box">
-            <span class="black text-md">Crea cartella</span>
+            <span class="black text-md"><b>Crea cartella</b></span>
             <hr class="bg-black">
 
             @include('bank.layouts.partials.error')    
@@ -27,10 +27,9 @@
                 <div class="form-group">
                     <label for="type" class="text">Cartella</label>
                     <select style="height: 47px!important" class="form-control" name="type" id="type">
-                    <optgroup label="documenti">
+                        <option disabled selected value="">Seleziona</option>
                         <option value="documenti vari">documenti vari</option>
                         <option value="documenti fiscali">documenti fiscali</option>
-                    </optgroup>
                     </select>
                 </div>
                 <button type="submit" class="add-button position-relative">

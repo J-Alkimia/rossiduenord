@@ -18,6 +18,6 @@ class Bank
         if (Auth()->user()->role == 'bank') {
             return $next($request);
         }
-        return redirect('home');
+        return redirect('login');
     }
 }

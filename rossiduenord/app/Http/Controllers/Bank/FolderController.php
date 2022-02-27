@@ -7,6 +7,7 @@ use App\Bank;
 use App\File;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 class FolderController extends Controller
@@ -49,7 +50,34 @@ class FolderController extends Controller
         $folder = new Folder($validated);
         $id = auth()->user()->id;
         $folder->bank()->associate($id)->save();
-        return redirect()->route('bank.folder.index')->with('message', "Nuovo file inserito!");
+        return redirect()->route('bank.folder.index')->with('message', "Nuova Cartella: $folder->name inserita!");
+    }
+
+    public function fileCreate(Folder $folder)
+    {
+        return view('bank.file_storage.create', compact('folder'));
+    }
+
+    public function fileStore(Request $request)
+    {
+        $validated = $request->validate([
+            'title' => 'required | string',
+            'folder_id' => 'required | integer | exists:folders,id',
+            'file' => 'required',
+        ]);
+
+        $bank_file = Storage::put('banc_file', $validated['file']);
+        $validated['file'] = $bank_file;
+
+        /*         $folders = Folder::all();
+        $id = $folders[1]->getAttribute('id');
+        $file = new File($validated);
+        $file->folder()->associate($id)->save();
+ */
+        $folder = $validated['folder_id'];
+        File::create($validated);
+        return redirect()->route('bank.folder.show', compact('folder'))->with('message', "Nuovo file inserito!");
+
     }
 
     /**
@@ -91,7 +119,7 @@ class FolderController extends Controller
         ]);
 
         $folder->update($validated);
-        return redirect()->route('bank.folder.index')->with('message', "Cartella modificata!");
+        return redirect()->route('bank.folder.index')->with('message', "La cartella: $folder->name e stata modificata!");
     }
 
     /**
@@ -104,6 +132,6 @@ class FolderController extends Controller
     {
         $folder = Folder::find($id);
         $folder->delete();
-        return redirect()->back()->with('message', "La cartella e stata eliminata!");
+        return redirect()->back()->with('message', "La cartella: $folder->name e stata eliminata!");
     }
 }

@@ -1,14 +1,19 @@
 @extends('bank.layouts.bank')
-
+{{--         $folders = Folder::all();
+        $id = $folders[0]->getAttribute('id');
+        
+        $file = new File($validated);
+        $file->folder()->associate($id)->save();
+ --}}
 @section('content')
     <div class="content-main">
         <div class="box">
-            <span class="black text-md">Carica file</span>
+            <span class="black text-md"><b>Carica file</b></span>
             <hr class="bg-black">
 
             @include('bank.layouts.partials.error')    
 
-            <form action="{{ route('bank.file.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('bank.file.store', $file->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">

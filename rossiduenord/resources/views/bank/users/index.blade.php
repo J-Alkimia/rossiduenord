@@ -5,7 +5,7 @@
         <a href="{{route('bank.users.create')}}" class="add-button">+ Aggiungi Utente</a>
 
         <div class="box">
-            <span class="black text-md">Elenco Utenti</span>
+            <span class="black text-md"><b>Elenco Utenti</b></span>
             <hr class="bg-black">
             <div class="d-flex align-items-center justify-content-between">
                 <div>

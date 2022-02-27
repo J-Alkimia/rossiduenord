@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-main">
         <div class="box">
-            <span class="black text-md">Mostra file</span>
+            <span class="black text-md"><b>File:</b> {{ $file->title}}</span>
             <hr class="bg-black">
 
             <div>

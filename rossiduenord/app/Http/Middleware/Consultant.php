@@ -18,6 +18,6 @@ class Consultant
         if (Auth()->user()->role == 'consultant') {
             return $next($request);
         }
-        return redirect('home');
+        return redirect('login');
     }
 }

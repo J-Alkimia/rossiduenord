@@ -18,6 +18,6 @@ class Condominium
         if (Auth()->user()->role == 'condominium') {
             return $next($request);
         }
-        return redirect('home');
+        return redirect('login');
     }
 }

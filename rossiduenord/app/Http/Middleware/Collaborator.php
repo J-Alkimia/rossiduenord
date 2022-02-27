@@ -18,6 +18,6 @@ class Collaborator
         if (Auth()->user()->role == 'collaborator') {
             return $next($request);
         }
-        return redirect('home');
+        return redirect('login');
     }
 }

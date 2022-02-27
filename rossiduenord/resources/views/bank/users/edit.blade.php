@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-main">
         <div class="box">
-            <span class="black text-md">Modifica utente</span>
+            <span class="black text-md"><b>Modifica utente:</b> {{ $user->name }}</span>
             <hr class="bg-black">
 
             @include('bank.layouts.partials.error')    
