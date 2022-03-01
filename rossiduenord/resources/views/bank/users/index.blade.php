@@ -38,9 +38,10 @@
                             <tr style="border-top: 1px solid #707070">
                                 <th style="width: 2%"></th>
                                 <th style="width: 5%">ID</th>
-                                <th style="width: 25%">Nome</th>
-                                <th style="width: 25%">Email</th>
+                                <th style="width: 10%">Nome</th>
+                                <th style="width: 20%">Email</th>
                                 <th style="width: 18%">Tipologia</th>
+                                <th style="width: 10%">Creato da</th>
                                 <th style="width: 22%"></th>
                             </tr>
                         </thead>
@@ -58,6 +59,7 @@
                                         {{$user->role}}
                                     </div>
                                 </td>
+                                <td>{{$user->created_by}}</td>
                                 <td class="">
                                     <a href="{{route('bank.users.show', $user)}}" class="btn-custom white bg-green">
                                         Vedi

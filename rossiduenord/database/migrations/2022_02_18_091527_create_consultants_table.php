@@ -15,6 +15,7 @@ class CreateConsultantsTable extends Migration
     {
         Schema::create('consultants', function (Blueprint $table) {
             $table->id();
+            $table->string('created_by')->nullable();
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name');

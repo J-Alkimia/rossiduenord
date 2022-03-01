@@ -16,7 +16,7 @@ class Financial extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_id', 'name', 'referent', 'referent_phone', 'email', 'password',
+        'user_id', 'name', 'referent', 'referent_phone', 'email', 'password', 'created_by',
     ];
 
     public function user()

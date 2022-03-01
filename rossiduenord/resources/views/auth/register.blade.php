@@ -12,6 +12,20 @@
                         @csrf
 
                         <div class="form-group row">
+                            <label for="created_by" class="col-md-4 col-form-label text-md-right">{{ __('Creato da') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="created_by" type="text" class="form-control @error('created_by') is-invalid @enderror" name="created_by" value="Admin" autofocus>
+
+                                @error('created_by')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">

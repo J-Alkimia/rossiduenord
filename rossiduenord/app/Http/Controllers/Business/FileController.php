@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Bank;
+namespace App\Http\Controllers\Business;
 
 use App\{File, Folder};
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
 class FileController extends Controller
 {
 
@@ -14,10 +15,10 @@ class FileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Folder $folder, File $file)
+    public function create(File $file)
     {
         $folders = Folder::all();
-        return view('bank.file_storage.create', compact('folders', 'file'));
+        return view('business.file_storage.create', compact('folders', 'file'));
     }
 
     /**
@@ -34,12 +35,12 @@ class FileController extends Controller
             'file' => 'required',
         ]);
 
-        $bank_file = Storage::put('banc_file', $validated['file']);
-        $validated['file'] = $bank_file;
+        $business_file = Storage::put('business_file', $validated['file']);
+        $validated['file'] = $business_file;
 
         $folder = $validated['folder_id'];
         File::create($validated);
-        return redirect()->route('bank.folder.show', compact('folder'))->with('message', "Nuovo file inserito!");
+        return redirect()->route('business.folder.show', compact('folder'))->with('message', "Nuovo file inserito!");
     }
 
     /**
@@ -50,8 +51,7 @@ class FileController extends Controller
      */
     public function show(File $file)
     {
-
-        return view('bank.file_storage.show', compact('file'));
+        return view('business.file_storage.show', compact('file'));
     }
 
     /**
@@ -63,7 +63,7 @@ class FileController extends Controller
     public function edit(File $file)
     {
         $folders = Folder::all();
-        return view('bank.file_storage.edit', compact('file', 'folders'));
+        return view('business.file_storage.edit', compact('file', 'folders'));
     }
 
     /**
@@ -81,15 +81,15 @@ class FileController extends Controller
             'file' => 'nullable',
         ]);
 
-        if(array_key_exists('file', $validated)){
+        if (array_key_exists('file', $validated)) {
             Storage::delete($file->file);
-            $bank_file = Storage::put('banc_file', $validated['file']);
-            $validated['file'] = $bank_file;
+            $business_file = Storage::put('business_file', $validated['file']);
+            $validated['file'] = $business_file;
         }
-        
+
         $file->update($validated);
         $folder = $validated['folder_id'];
-        return redirect()->route('bank.folder.show', compact('folder'))->with('message', "file modificato!");
+        return redirect()->route('business.folder.show', compact('folder'))->with('message', "file modificato!");
     }
 
     /**

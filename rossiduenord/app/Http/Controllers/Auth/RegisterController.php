@@ -66,6 +66,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['required', 'string'],
+            'created_by' => ['required', 'string'],
         ]);
     }
 
@@ -77,11 +78,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //dd($data);
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role' => $data['role'],
+            'created_by' => $data['created_by'],
         ]);
 
         if($data['role'] == 'admin') {
@@ -91,8 +94,11 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $user->password,
+                'created_by' => $data['created_by'],
+
             ]);
         }
+
         if ($data['role'] == 'financial') {
 
             $user = Financial::create([
@@ -100,8 +106,10 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $user->password,
+                'created_by' => $data['created_by'],
             ]);
         }
+
         if ($data['role'] == 'bank') {
 
             $user = Bank::create([
@@ -109,8 +117,10 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $user->password,
+                'created_by' => $data['created_by'],
             ]);
         }
+
         if ($data['role'] == 'business') {
 
             $user = Business::create([
@@ -118,8 +128,10 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $user->password,
+                'created_by' => $data['created_by'],
             ]);
         }
+
         if ($data['role'] == 'collaborator') {
 
             $user = Collaborator::create([
@@ -127,8 +139,10 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $user->password,
+                'created_by' => $data['created_by'],
             ]);
         }
+
         if ($data['role'] == 'consultant') {
 
             $user = Consultant::create([
@@ -136,8 +150,10 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $user->password,
+                'created_by' => $data['created_by'],
             ]);
         }
+
         if ($data['role'] == 'asseverator') {
 
             $user = Asseverator::create([
@@ -145,8 +161,10 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $user->password,
+                'created_by' => $data['created_by'],
             ]);
         }
+
         if ($data['role'] == 'manager') {
 
             $user = Manager::create([
@@ -154,8 +172,10 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $user->password,
+                'created_by' => $data['created_by'],
             ]);
         }
+
         if ($data['role'] == 'provider') {
 
             $user = Provider::create([
@@ -163,8 +183,10 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $user->password,
+                'created_by' => $data['created_by'],
             ]);
         }
+
         if ($data['role'] == 'lv1_agent') {
 
             $user = Lv1_agent::create([
@@ -172,8 +194,10 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $user->password,
+                'created_by' => $data['created_by'],
             ]);
         }
+
         if ($data['role'] == 'lv2_agent') {
 
             $user = Lv2_agent::create([
@@ -181,8 +205,10 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $user->password,
+                'created_by' => $data['created_by'],
             ]);
         }
+        
         if ($data['role'] == 'condominium') {
 
             $user = Condominium::create([
@@ -190,6 +216,7 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $user->password,
+                'created_by' => $data['created_by'],
             ]);
         }
 

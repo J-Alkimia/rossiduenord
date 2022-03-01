@@ -29,13 +29,16 @@
                 </div>
                 <ul class="nav flex-column">
                     <li class="nav-item nav-pills">
-                        <a class="nav-link {{Route::currentRouteName() == 'bank.dashboard' ? 'activ' : ''}}" href="{{route('bank.dashboard')}}">Dashboard</a>
+                        <a class="nav-link {{Route::currentRouteName() == 'bank.dashboard' ? 'activ' : ''}}" href="{{route('bank.dashboard')}}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  {{Route::currentRouteName() == 'bank.users.index' ? 'activ' : ''}}" href="{{route('bank.users.index')}}">Gestione Utenti</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{Route::currentRouteName() == 'bank.folder.index' ? 'activ' : ''}}" href="{{route('bank.folder.index')}}" href="#">Gestione Cartelle/File</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Gestione Pratiche</a>
                     </li>
                 </ul>
             </nav>

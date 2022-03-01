@@ -31,31 +31,4 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
-    data: {
-        searchFolder: null,
-        folders: null,
-    },
-    mounted() {
-        Axios.get('/api/folders').then(resp => {
-            this.folders = resp.data.data;
-        }).catch(e => {
-            console.error('Sorry!' + e);
-        })
-    },
-
-    computed: {
-        searchFolders(){
-            if(this.searchFolder){
-                return this.folders.filter((folder) => {
-                    return this.searchFolder
-                    .toLowerCase()
-                    .split('')
-                    .every(v => folder.name.toLowerCase().includes(v))
-                })
-            }else{
-                return this.folders
-            }
-        }
-    }
-
 });

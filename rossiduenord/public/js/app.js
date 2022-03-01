@@ -49797,35 +49797,7 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app',
-  data: {
-    searchFolder: null,
-    folders: null
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    Axios.get('/api/folders').then(function (resp) {
-      _this.folders = resp.data.data;
-    })["catch"](function (e) {
-      console.error('Sorry!' + e);
-    });
-  },
-  computed: {
-    searchFolders: function searchFolders() {
-      var _this2 = this;
-
-      if (this.searchFolder) {
-        return this.folders.filter(function (folder) {
-          return _this2.searchFolder.toLowerCase().split('').every(function (v) {
-            return folder.name.toLowerCase().includes(v);
-          });
-        });
-      } else {
-        return this.folders;
-      }
-    }
-  }
+  el: '#app'
 });
 
 /***/ }),

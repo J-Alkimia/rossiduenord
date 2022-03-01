@@ -15,8 +15,9 @@ class CreateFoldersTable extends Migration
     {
         Schema::create('folders', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('bank_id')->unsigned();
-            $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('created_by');
             $table->string('name');
             $table->string('type');
             $table->timestamps();
@@ -31,8 +32,8 @@ class CreateFoldersTable extends Migration
     public function down()
     {
         Schema::table('folders', function (Blueprint $table) {
-            $table->dropForeign(['bank_id']);
-            $table->dropColumn('bank_id');
+            $table->dropForeign(['user_id']);
+            $table->dropColumn('user_id');
         });
         Schema::dropIfExists('folders');
     }

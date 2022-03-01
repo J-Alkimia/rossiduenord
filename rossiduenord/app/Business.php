@@ -29,6 +29,7 @@ class Business extends Authenticatable
         'rea', 
         'c_ateco', 
         'reg_date',
+        'created_by',
     ];
 
     public function user()

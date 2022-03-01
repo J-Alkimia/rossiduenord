@@ -1,4 +1,4 @@
-@extends('bank.layouts.bank')
+@extends('business.layouts.business')
 
 @section('content')
     <div class="content-main">
@@ -8,7 +8,7 @@
             </div>
         @endif
 
-        <a href="{{route('bank.folder.create')}}" class="add-button">+ Aggiungi cartella</a>
+        <a href="{{route('business.folder.create')}}" class="add-button">+ Aggiungi cartella</a>
         
         <div class="box">
             <span class="black text-md"><b>Elenco cartelle</b></span>
@@ -55,10 +55,10 @@
                                 <td>{{$folder->type}}</td>
                                 <td>{{$folder->created_by}}</td>
                                 <td class="">
-                                    <a href="{{route('bank.folder.show', $folder->id)}}" class="btn-custom white bg-green">
+                                    <a href="{{route('business.folder.show', $folder->id)}}" class="btn-custom white bg-green">
                                         Vedi
                                     </a>
-                                    <a href="{{route('bank.folder.edit', $folder->id)}}" class="btn-custom white bg-black">
+                                    <a href="{{route('business.folder.edit', $folder->id)}}" class="btn-custom white bg-black">
                                         Modifica
                                     </a>
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del{{$folder->id}}">
@@ -79,7 +79,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">indietro</button>
-                                                    <form action="{{ Route('bank.folder.destroy', $folder->id) }}" method="POST">
+                                                    <form action="{{ Route('business.folder.destroy', $folder->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn-custom white bg-red mr-0">

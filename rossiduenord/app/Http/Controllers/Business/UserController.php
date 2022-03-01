@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Bank;
+namespace App\Http\Controllers\Business;
 
-use App\{User, Business};
+use App\{User,Collaborator};
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,10 +15,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $user)
     {
         $users = User::where('created_by', Auth::user()->name)->orderBy('created_at', 'DESC')->paginate(10);
-        return view('bank.users.index', compact('users'));
+        return view('business.users.index', compact('user', 'users'));
     }
 
     /**
@@ -28,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('bank.users.create');
+        return view('business.users.create');
     }
 
     /**
@@ -38,32 +38,29 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {           
+    {
         $validated = $request->validate([
             'role' => 'required | string',
-            'created_by' => 'nullable | string',
             'name' => 'required | string | min:3 | max:100',
-            'referent' => 'required | string',
-            'referent_phone' => 'required | string',
             'email' => 'required | string | email | max:100 | unique:users',
             'password' => 'required | string | min:8 | confirmed'
         ]);
 
-        $created_by = Auth::user()->name;
-        $validated['created_by'] = $created_by;
-        
         $password = Hash::make($request->password);
         $validated['password'] = $password;
 
+        $created_by = Auth::user()->name;
+        $validated['created_by'] = $created_by;
+
         User::create($validated);
-        
-        if($validated['role'] == 'business'){
+
+        if ($validated['role'] == 'collaborator') {
             $user_id = Auth::user()->id;
             $validated['user_id'] = $user_id;
-            Business::create($validated);
+            Collaborator::create($validated);
         }
-        //dd($validated);
-        return redirect()->route('bank.users.index')->with('message', "Nuovo utente inserito!");
+
+        return redirect()->route('business.users.index')->with('message', "Nuovo utente inserito!");
     }
 
     /**
@@ -74,7 +71,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('bank.users.show', compact('user'));
+        return view('business.users.show', compact('user'));
     }
 
     /**
@@ -85,7 +82,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('bank.users.edit', compact('user'));
+        return view('business.users.edit', compact('user'));
     }
 
     /**
@@ -95,7 +92,7 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $user, Collaborator $collaborator)
     {
         $validated = $request->validate([
             'role' => 'required | string',
@@ -107,7 +104,14 @@ class UserController extends Controller
         $password = Hash::make($request->password);
         $validated['password'] = $password;
         $user->update($validated);
-        return redirect()->route('bank.users.index')->with('message', "utente modificato!");
+
+        if ($validated['role'] == 'collaborator') {
+            $user_id = Auth::user()->id;
+            $validated['user_id'] = $user_id;
+            $collaborator->update($validated);
+        }
+
+        return redirect()->route('business.users.index')->with('message', "utente modificato!");
     }
 
     /**
@@ -117,10 +121,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {   
+    {
         $user = User::find($id);
         $user->delete();
-
         return redirect()->back()->with('message', "Utente $user->name e stato eliminato!");
     }
 }

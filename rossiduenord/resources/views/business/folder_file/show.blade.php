@@ -1,4 +1,4 @@
-@extends('bank.layouts.bank')
+@extends('business.layouts.business')
 
 @section('content')
     <div class="content-main">
@@ -8,13 +8,19 @@
             </div>
         @endif
 
-        <a href="{{route('bank.folder.create')}}" class="add-button">+ Aggiungi cartella</a>
-        
+        <a href="{{route('business.file.create')}}" class="add-button">+ Aggiungi file</a>
+
         <div class="box">
-            <span class="black text-md"><b>Elenco cartelle</b></span>
+            <div style="margin-bottom: 20px">
+                <img src="{{ asset('/img/icon/arrow-left.svg')}}" alt="">
+                <a href="{{ route('business.folder.index') }}">Torna indietro</a>
+            </div>
+
+            <span class="black text-md"><b>Elenco file cartella:</b> {{$folder->name}}</span>
             <hr class="bg-black">
 
-            @if(sizeof($folders) > 0)
+
+            @if(sizeof($files) > 0)
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
                         <div class="d-inline">
@@ -22,64 +28,63 @@
                             <input class="type-number" type="number" value="100" name="" id="">
                         </div>
                         <button id="select-all" class="btn-custom bg-black white">Seleziona tutto</button>
-                        <button id="deselect-all" class="btn-custom bg-grey white">Deseleziona tutto</button>
+                        <button id="deselect-all" class="btn-custom bg-grey white">Deseleziona tutto</buttonhref=>
                         <button id="visible-column" class="btn-custom bg-lighgrey black">Visibilità colonna</button>
                         <button id="select-delete" class="btn-custom bg-red white">Elimina selezionato</button>
                     </div>
-                    <form action="" method="POST" class="position-relative w-25">
-                        <input class="search" type="text" placeholder="Cerca" name="" id="">
+                    <div class="position-relative w-25">
+                        <input class="search" type="search" placeholder="Cerca" name="" id="">
                         <img class="img-search" src="{{ asset('/img/icon/ICONA-CERCA.svg')}}" alt="">
-                    </form>
+                    </div>
                 </div>
-
                 <div class="table mt-2">
                     <table>
                         <thead>
                             <tr style="border-top: 1px solid #707070">
                                 <th style="width: 2%"></th>
-                                <th style="width: 25%">Nome cartella</th>
-                                <th style="width: 20%">Data creazione</th>
-                                <th style="width: 15%">Tipologia</th>
-                                <th style="whith: 10%">Utente</th>
-                                <th style="width: 20%"></th>
+                                <th style="width: 5%">Titolo</th>
+                                <th style="width: 25%">Data creazione</th>
+                                <th style="width: 25%">File</th>
+                                <th style="width: 22%"></th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($folders as $folder)
+                            @foreach($files as $file)
                             <tr>
                                 <td style="border-left: 1px solid #707070">
-                                    <input class="ceck" type="checkbox" value="{{$folder->id}}" name="id" id="id">
+                                    <input value="{{$file->id}}" class="ceck" type="checkbox" name="id" id="id">
                                 </td>
-                                <td>{{$folder->name}}</td>
-                                <td>{{$folder->created_at}}</td>
-                                <td>{{$folder->type}}</td>
-                                <td>{{$folder->created_by}}</td>
+                                <td>{{$file->title}}</td>
+                                <td>{{$file->created_at}}</td>
+                                <td>
+                                    <a href="{{ asset('storage/' . $file->file)}}" download="{{$file->title}}.pdf">scarica</a>
+                                </td> 
                                 <td class="">
-                                    <a href="{{route('bank.folder.show', $folder->id)}}" class="btn-custom white bg-green">
+                                    <a href="{{route('business.file.show', $file)}}" class="btn-custom white bg-green">
                                         Vedi
                                     </a>
-                                    <a href="{{route('bank.folder.edit', $folder->id)}}" class="btn-custom white bg-black">
+                                    <a href="{{route('business.file.edit', $file)}}" class="btn-custom white bg-black">
                                         Modifica
                                     </a>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del{{$folder->id}}">
-                                        elimina
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del{{$file->id}}">
+                                    elimina
                                     </button>
 
-                                    <div class="modal fade" id="del{{$folder->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="del{{$file->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Conferma elimina cartella</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Conferma elimina file</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Sei sicuro di volere eliminare {{$folder->name}} e tutto il suo contenuto!
+                                                    Sei sicuro di volere eliminare {{$file->title}}
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">indietro</button>
-                                                    <form action="{{ Route('bank.folder.destroy', $folder->id) }}" method="POST">
+                                                    <form action="{{ Route('business.file.destroy', $file->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn-custom white bg-red mr-0">
@@ -90,16 +95,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                </td>                        
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
             @else
-                <h5>Nessuna cartella presente!</h5>
+                <h5>Nessun File contenuto in cartella!</h5>
             @endif
         </div>
     </div>
 @endsection
-

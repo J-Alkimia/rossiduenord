@@ -1,4 +1,4 @@
-@extends('bank.layouts.bank')
+@extends('business.layouts.business')
 
 @section('content')
     <div class="content-main">
@@ -8,7 +8,7 @@
 
             <div>
                 <img src="{{ asset('/img/icon/arrow-left.svg')}}" alt="">
-                <a href="{{ route('bank.users.index') }}">Torna indietro</a>
+                <a href="{{ route('business.users.index') }}">Torna indietro</a>
             </div>
             
             <table style="width: 100%; margin-top: 20px;">
@@ -20,14 +20,6 @@
                     <tr>
                         <td class="w-25">Nome</td>
                         <td>{{ $user->name}}</td>
-                    </tr>
-                    <tr>
-                        <td class="w-25">Referente</td>
-                        <td>{{ $user->referent}}</td>
-                    </tr>
-                    <tr>
-                        <td class="w-25">Numero referente</td>
-                        <td>{{ $user->referent_phone}}</td>
                     </tr>
                     <tr>
                         <td class="w-25">Email</td>

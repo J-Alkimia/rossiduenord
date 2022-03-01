@@ -1,4 +1,4 @@
-@extends('bank.layouts.bank')
+@extends('business.layouts.business')
 
 @section('content')
     <div class="content-main">
@@ -7,14 +7,14 @@
                 <strong>{{session('message')}}</strong>
             </div>
         @endif
-
-        <a href="{{route('bank.folder.create')}}" class="add-button">+ Aggiungi cartella</a>
         
+        <a href="{{route('business.users.create')}}" class="add-button">+ Aggiungi Utente</a>
+
         <div class="box">
-            <span class="black text-md"><b>Elenco cartelle</b></span>
+            <span class="black text-md"><b>Elenco Utenti</b></span>
             <hr class="bg-black">
 
-            @if(sizeof($folders) > 0)
+            @if(sizeof($users) > 0)
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
                         <div class="d-inline">
@@ -22,14 +22,14 @@
                             <input class="type-number" type="number" value="100" name="" id="">
                         </div>
                         <button id="select-all" class="btn-custom bg-black white">Seleziona tutto</button>
-                        <button id="deselect-all" class="btn-custom bg-grey white">Deseleziona tutto</button>
+                        <button id="deselect-all" class="btn-custom bg-grey white">Deseleziona tutto</buttonhref=>
                         <button id="visible-column" class="btn-custom bg-lighgrey black">Visibilità colonna</button>
                         <button id="select-delete" class="btn-custom bg-red white">Elimina selezionato</button>
                     </div>
-                    <form action="" method="POST" class="position-relative w-25">
-                        <input class="search" type="text" placeholder="Cerca" name="" id="">
+                    <div class="position-relative w-25">
+                        <input class="search" type="search" placeholder="Cerca" name="" id="">
                         <img class="img-search" src="{{ asset('/img/icon/ICONA-CERCA.svg')}}" alt="">
-                    </form>
+                    </div>
                 </div>
 
                 <div class="table mt-2">
@@ -37,35 +37,41 @@
                         <thead>
                             <tr style="border-top: 1px solid #707070">
                                 <th style="width: 2%"></th>
-                                <th style="width: 25%">Nome cartella</th>
-                                <th style="width: 20%">Data creazione</th>
-                                <th style="width: 15%">Tipologia</th>
-                                <th style="whith: 10%">Utente</th>
-                                <th style="width: 20%"></th>
+                                <th style="width: 5%">ID</th>
+                                <th style="width: 10%">Nome</th>
+                                <th style="width: 20%">Email</th>
+                                <th style="width: 18%">Tipologia</th>
+                                <th style="width: 10%">Creato da</th>
+                                <th style="width: 22%"></th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($folders as $folder)
+                            @foreach($users as $user)
                             <tr>
                                 <td style="border-left: 1px solid #707070">
-                                    <input class="ceck" type="checkbox" value="{{$folder->id}}" name="id" id="id">
+                                    <input class="ceck" type="checkbox" name="id" id="id">
                                 </td>
-                                <td>{{$folder->name}}</td>
-                                <td>{{$folder->created_at}}</td>
-                                <td>{{$folder->type}}</td>
-                                <td>{{$folder->created_by}}</td>
+                                <td>{{$user->id}}</td>
+                                <td>{{$user->name}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>
+                                    <div class="pill">
+                                        {{$user->role}}
+                                    </div>
+                                </td>
+                                <td>{{$user->created_by}}</td>
                                 <td class="">
-                                    <a href="{{route('bank.folder.show', $folder->id)}}" class="btn-custom white bg-green">
+                                    <a href="{{route('business.users.show', $user)}}" class="btn-custom white bg-green">
                                         Vedi
                                     </a>
-                                    <a href="{{route('bank.folder.edit', $folder->id)}}" class="btn-custom white bg-black">
+                                    <a href="{{route('business.users.edit', $user)}}" class="btn-custom white bg-black">
                                         Modifica
                                     </a>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del{{$folder->id}}">
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del{{$user->id}}">
                                         elimina
                                     </button>
 
-                                    <div class="modal fade" id="del{{$folder->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="del{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -75,11 +81,11 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Sei sicuro di volere eliminare {{$folder->name}} e tutto il suo contenuto!
+                                                    Sei sicuro di volere eliminare l'utente: {{$user->name}}
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">indietro</button>
-                                                    <form action="{{ Route('bank.folder.destroy', $folder->id) }}" method="POST">
+                                                    <form action="{{ Route('business.users.destroy', $user->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn-custom white bg-red mr-0">
@@ -90,16 +96,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                </td>                        
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+
                 </div>
             @else
-                <h5>Nessuna cartella presente!</h5>
+                <h5>Nessun profilo registrato al momento! </h5>
             @endif
         </div>
     </div>
 @endsection
-

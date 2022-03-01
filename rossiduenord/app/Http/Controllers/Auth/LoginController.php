@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-
+use App\Business;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Arr;
 class LoginController extends Controller
 {
     /*
@@ -41,6 +43,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+
         $input = $request->all();
         $this->validate($request, [
             'email' => 'required|email',
@@ -48,6 +51,15 @@ class LoginController extends Controller
         ]);
 
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
+            $user = Auth::User()->getAttributes();
+            $type = Arr::exists($user, 'type');
+            $p_iva = Arr::exists($user, 'p_iva');
+            $c_f = Arr::exists($user, 'c_f');
+            $legal_form = Arr::exists($user, 'legal_form');
+            $rea = Arr::exists($user, 'rea');
+            $c_ateco = Arr::exists($user, 'c_ateco');
+            $reg_date = Arr::exists($user, 'reg_date');
+
             if (auth()->user()->role == 'admin') {
                 return redirect()->route('admin.dashboard');
             }
@@ -58,6 +70,9 @@ class LoginController extends Controller
                 return redirect()->route('bank.dashboard');
             }
             if (auth()->user()->role == 'business') {
+                if($type || $p_iva || $c_f || $legal_form || $rea || $c_ateco || $reg_date == false){
+                    return redirect()->route('business.edit.data');
+                }
                 return redirect()->route('business.dashboard');
             }
             if (auth()->user()->role == 'collaborator') {

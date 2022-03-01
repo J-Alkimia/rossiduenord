@@ -1,4 +1,4 @@
-@extends('bank.layouts.bank')
+@extends('business.layouts.business')
 
 @section('content')
     <div class="content-main">
@@ -6,16 +6,16 @@
             <span class="black text-md"><b>Crea utente</b></span>
             <hr class="bg-black">
 
-            @include('bank.layouts.partials.error')    
+            @include('business.layouts.partials.error')    
 
-            <form action="{{ route('bank.users.store') }}" method="POST">
+            <form action="{{ route('business.users.store') }}" method="POST">
                 @csrf
 
                 <div class="form-group">
                     <label for="role" class="text">Tipologia profilo</label>
                     <select style="height: 47px!important" class="form-control" name="role" id="role">
                     <optgroup label="Ruoli">
-                        <option value="business">Impresa</option>
+                        <option value="collaborator">collaboratore</option>
                     </optgroup>
                     </select>
                 </div>
@@ -26,32 +26,6 @@
                         <input id="name" type="text" style="height: 47px!important" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                         @error('name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="referent" class="text">{{ __('referente') }}</label>
-                    <div>
-                        <input id="referent" type="text" style="height: 47px!important" class="form-control @error('referent') is-invalid @enderror" name="referent" value="{{ old('referent') }}" required autocomplete="referent" autofocus>
-
-                        @error('referent')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="referent_phone" class="text">{{ __('Numero referente') }}</label>
-                    <div>
-                        <input id="referent_phone" type="text" style="height: 47px!important" class="form-control @error('referent_phone') is-invalid @enderror" name="referent_phone" value="{{ old('referent_phone') }}" required autocomplete="name" autofocus>
-
-                        @error('referent_phone')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Bank;
+namespace App\Http\Controllers\Business;
 
-use App\{Folder,User,File};
+use App\{Folder, User, File};
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 class FolderController extends Controller
 {
     /**
@@ -13,21 +14,24 @@ class FolderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Folder $folder)
     {
+        $folders = Folder::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(10);
+        return view('business.folder_file.index', compact('folder', 'folders'));
+
 /*         $folders = Folder::select(
             'folders.created_at',
-            'folders.created_by', 
-            'folders.id', 
-            'folders.user_id', 
-            'folders.name', 
-            'folders.type', 
+            'folders.created_by',
+            'folders.id',
+            'folders.user_id',
+            'folders.name',
+            'folders.type',
         )
-        ->join('users', 'users.created_by', '=', 'folders.created_by')
-        ->orderBy('created_at', 'DESC')->paginate(10);
+            ->join('users', 'users.created_by', '=', 'folders.created_by')
+            ->orderBy('created_at', 'DESC')->paginate(10);
  */        //dd($folders);
-        $folders = Folder::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(10);
-        return view('bank.folder_file.index', compact('folders'));
+        return view('business.folder_file.index', compact('folders'));
+
     }
 
     /**
@@ -38,7 +42,7 @@ class FolderController extends Controller
     public function create(Folder $folder, User $user)
     {
         $users = User::all();
-        return view('bank.folder_file.create', compact('folder','users','user'));
+        return view('business.folder_file.create', compact('folder', 'users', 'user'));
     }
 
     /**
@@ -48,7 +52,7 @@ class FolderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         $validated = $request->validate([
             'name' => 'required | string',
             'type' => 'required | string ',
@@ -56,13 +60,13 @@ class FolderController extends Controller
 
         $created_by = Auth::user()->name;
         $validated['created_by'] = $created_by;
-        
+
         $folder = new Folder($validated);
         $id = auth()->user()->id;
         $folder->user()->associate($id)->save();
-        return redirect()->route('bank.folder.index')->with('message', "Nuova Cartella: $folder->name inserita!");
+        return redirect()->route('business.folder.index')->with('message', "Nuova Cartella: $folder->name inserita!");
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -71,9 +75,9 @@ class FolderController extends Controller
      */
     public function show(Folder $folder, File $file)
     {
-        $files = File::where('folder_id','=', $folder->id)->orderBy('created_at', 'DESC')->paginate(10);
+        $files = File::where('folder_id', '=', $folder->id)->orderBy('created_at', 'DESC')->paginate(10);
 
-        return view('bank.folder_file.show', compact('folder', 'files'));
+        return view('business.folder_file.show', compact('folder', 'files'));
     }
 
     /**
@@ -84,7 +88,7 @@ class FolderController extends Controller
      */
     public function edit(Folder $folder)
     {
-        return view('bank.folder_file.edit', compact('folder'));
+        return view('business.folder_file.edit', compact('folder'));
     }
 
     /**
@@ -102,7 +106,7 @@ class FolderController extends Controller
         ]);
 
         $folder->update($validated);
-        return redirect()->route('bank.folder.index')->with('message', "La cartella: $folder->name e stata modificata!");
+        return redirect()->route('business.folder.index')->with('message', "La cartella: $folder->name e stata modificata!");
     }
 
     /**

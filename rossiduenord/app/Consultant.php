@@ -16,7 +16,7 @@ class Consultant extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_id', 'name', 'phone', 'email', 'password',
+        'user_id', 'name', 'phone', 'email', 'password', 'created_by',
     ];
 
     public function user()
