@@ -34,9 +34,9 @@ class HomeController extends Controller
             'reg_date' => 'nullable | string ',
 
         ]);
-
+        //dd($validated);
         $business->update($validated);
-
+        //dd($business);
         return redirect()->route('business.dashboard')->with('message', "Profilo completato!");
 
     }

@@ -8,7 +8,7 @@
 
             @include('business.layouts.partials.error')    
 
-            <form action="{{ route('business.users.update', $user) }}" method="POST">
+            <form action="{{ route('business.users.update', $user, $collaborator) }}" method="POST">
                 @csrf
                 @method('PUT')
 

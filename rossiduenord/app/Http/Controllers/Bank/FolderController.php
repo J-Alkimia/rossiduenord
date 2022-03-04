@@ -15,19 +15,9 @@ class FolderController extends Controller
      */
     public function index()
     {
-/*         $folders = Folder::select(
-            'folders.created_at',
-            'folders.created_by', 
-            'folders.id', 
-            'folders.user_id', 
-            'folders.name', 
-            'folders.type', 
-        )
-        ->join('users', 'users.created_by', '=', 'folders.created_by')
-        ->orderBy('created_at', 'DESC')->paginate(10);
- */        //dd($folders);
-        $folders = Folder::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(10);
-        return view('bank.folder_file.index', compact('folders'));
+        $folders = Folder::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(100);
+        $relateds = Folder::where('parent_name', '=', Auth::user()->name)->orderBy('created_at', 'DESC')->paginate(100);
+        return view('bank.folder_file.index', compact('folders', 'relateds'));
     }
 
     /**
@@ -50,13 +40,17 @@ class FolderController extends Controller
     public function store(Request $request)
     {   
         $validated = $request->validate([
+            'parent_name' => 'nullable',
             'name' => 'required | string',
             'type' => 'required | string ',
         ]);
 
+        $parent_name = Auth::user()->created_by;
+        $validated['parent_name'] = $parent_name;
+
         $created_by = Auth::user()->name;
         $validated['created_by'] = $created_by;
-        
+        //dd($validated);
         $folder = new Folder($validated);
         $id = auth()->user()->id;
         $folder->user()->associate($id)->save();

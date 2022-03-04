@@ -80,9 +80,9 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(User $user, Collaborator $collaborator)
     {
-        return view('business.users.edit', compact('user'));
+        return view('business.users.edit', compact('user', 'collaborator'));
     }
 
     /**
@@ -103,14 +103,13 @@ class UserController extends Controller
 
         $password = Hash::make($request->password);
         $validated['password'] = $password;
+        $user_id = Auth::user()->id;
+        $validated['user_id'] = $user_id;
+
+        $collaborator->update($validated);
         $user->update($validated);
 
-        if ($validated['role'] == 'collaborator') {
-            $user_id = Auth::user()->id;
-            $validated['user_id'] = $user_id;
-            $collaborator->update($validated);
-        }
-
+        dd($collaborator, $user, $validated);
         return redirect()->route('business.users.index')->with('message', "utente modificato!");
     }
 
