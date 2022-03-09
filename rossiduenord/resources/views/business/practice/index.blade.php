@@ -1,13 +1,10 @@
 @extends('business.layouts.business')
 
 @section('content')
-    @if(session('message'))
-        <div class="alert alert-success" role="alert">
-            <strong>{{session('message')}}</strong>
-        </div>
-    @endif
+    @include('business.layouts.partials.error')
+    @include('business.layouts.partials.message')
 
-    <div style="padding: 30px 165px 10px 50px; border-bottom: 2px solid #DBDCDB" class="d-flex align-items-center justify-content-between mb-2">
+    <div style="padding: 10px 165px 10px 30px; border-bottom: 2px solid #DBDCDB" class="d-flex align-items-center justify-content-between mb-2">
         <h2 class="light-grey">Pratiche</h2>
         <form class="position-relative" style="width: 600px" action="">
             <div>
@@ -20,10 +17,14 @@
     <div class="content-main" style="padding-top: 0px;">
 
         <div class="box">
-            <span style="margin-right: 20px" class="black text-md"><b>Lista Pratiche</b></span>
-            <span class="black text-md"><b>Scheda Pratica</b></span>
-            <hr class="bg-black">
-
+            <span style="margin-right: 20px" class="black text-md {{Route::currentRouteName() == 'business.practice.index' ? 'bold' : ''}}">
+                Lista Pratiche
+            </span>
+            <span class="black text-md {{Route::currentRouteName() != 'business.practice.index' ? 'bold' : ''}}">
+                Scheda pratica
+            </span>
+            <hr class="bg-black" style="margin-top: 5px;">
+    
             <div>
                 <form action="" method="POST">
                     <div class="d-flex align-items-center justify-content-between mb-2">

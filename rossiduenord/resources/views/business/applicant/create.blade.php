@@ -1,103 +1,14 @@
 @extends('business.layouts.business')
 
 @section('content')
-    @if(session('message'))
-        <div class="alert alert-success" role="alert">
-            <strong>{{session('message')}}</strong>
-        </div>
-    @endif
-
-
-    <div style="padding: 30px 165px 10px 50px; border-bottom: 2px solid #DBDCDB" class="d-flex align-items-center justify-content-between mb-2">
-        <h2 class="light-grey">Pratiche</h2>
-        <form class="position-relative" style="width: 600px" action="">
-            <div>
-                <input class="input_search" type="text" placeholder="Cerca">
-                <img class="position-absolute" style="right: 25px; top: 15px;" src="{{ asset('/img/icon/ICONA-CERCA.svg') }}" alt="">
-            </div>
-        </form>
-    </div>
-
-    <div class="content-main" style="padding-top: 0px;">
-
-        <div class="box">
-            <span style="margin-right: 20px" class="black text-md"><b>Lista Pratiche</b></span>
-            <span class="black text-md"><b>Scheda Pratica</b></span>
-            <hr class="bg-black">
-
-            <div>
-                <div class="d-flex align-items-center" action="">
-                    <a href="{{route('business.practice.create') }}" class="d-flex flex-column align-items-center justify-content-center mr-3">
-                        <img src="{{ asset('/img/icon/icona_nuovo.svg') }}" alt="">
-                        <p style="color: #818387">Nuovo</p>
-                    </a>
-                    {{--href="{{route('business.practice.edit', $practice->id) }}"  --}}
-                    <a  class="d-flex flex-column align-items-center justify-content-center mr-3">
-                        <img src="{{ asset('/img/icon/icona_modifica.svg') }}" alt="">
-                        <p style="color: #818387">Modifica</p>
-                    </a>
-                    {{-- del{{$practice->id}} #del{{$practice->id}}   --}}
-                    <button type="button" data-toggle="modal" data-target="" style="border: none; background-color: transparent;" class="d-flex flex-column align-items-center justify-content-center mr-3">
-                        <img src="{{ asset('/img/icon/icona_cancella.svg') }}" alt="">
-                        <p style="color: #818387">Cancella</p>
-                    </button>
-
-                    <div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Conferma elimina cartella</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    Sei sicuro di volere eliminare e tutto il suo contenuto!
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">indietro</button>
-                                    {{-- {{ Route('business.practice.destroy', $practice->id) }} --}}
-                                    <form action="" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn-custom white bg-red mr-0">
-                                            Conferma
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-between menu">
-                <a href="{{route('business.applicant.create') }}" class="{{Route::currentRouteName() == 'business.applicant.create' ? 'visited' : ''}}">
-                    RICHIEDENTE
-                </a>
-                <a href="{{route('business.practice.create') }}" class="{{Route::currentRouteName() == 'business.practice.create' ? 'visited' : ''}}">
-                    PRATICA
-                </a>
-                <a href="">SOGGETTI E IMPORTI</a>
-                <a href="">IMMOBILE</a>
-                <a href="">FOTO DA APP</a>
-                <a href="">DOCUMENTI RICHIEST</a>
-                <a href="">SUPERBONUS 110%</a>
-                <a href="">CONTRATTI</a>
-                <a href="">POLIZZE ASSICURATIVE</a>
-                <a href="">BONUS CASA 50%</a>
-                <a href="">AUDITOR</a>
-            </div>
-
-            <div class="submenu">
-                <h6>Dati richiedente</h6>
-            </div>
+    @include('business.layouts.partials.error')
+    @include('business.layouts.partials.message')
+    @include('business.layouts.partials.practiceNav')
 
             <form action="{{ route('business.applicant.store') }}" method="POST">
                 @csrf
-
                 <div class="d-flex align-items-center">
-                    <h6>Richiedente</h6>
+                    <h6 style="color: #61a4d7; text-decoration:underline;">Richiedente</h6>
                     <div style="margin-left: 30px">
                         <input type="radio" name="applicant" id="applicant" value="privato">
                         <label for="applicant">Privato/Proprietario</label>

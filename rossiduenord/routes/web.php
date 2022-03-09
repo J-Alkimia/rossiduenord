@@ -68,6 +68,8 @@ Route::middleware('business')
     Route::resource('file', 'FileController');
     Route::resource('applicant', 'ApplicantController');
     Route::resource('practice', 'PracticeController');
+    Route::resource('superbonus', 'SuperBonusController');
+    Route::get('superbonus/1', 'SuperBonusController@test')->name('test');
 });
 
 
