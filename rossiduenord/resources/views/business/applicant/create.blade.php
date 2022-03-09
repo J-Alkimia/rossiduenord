@@ -71,6 +71,28 @@
                 </div>
             </div>
 
+            <div class="d-flex justify-content-between menu">
+                <a href="{{route('business.applicant.create') }}" class="{{Route::currentRouteName() == 'business.applicant.create' ? 'visited' : ''}}">
+                    RICHIEDENTE
+                </a>
+                <a href="{{route('business.practice.create') }}" class="{{Route::currentRouteName() == 'business.practice.create' ? 'visited' : ''}}">
+                    PRATICA
+                </a>
+                <a href="">SOGGETTI E IMPORTI</a>
+                <a href="">IMMOBILE</a>
+                <a href="">FOTO DA APP</a>
+                <a href="">DOCUMENTI RICHIEST</a>
+                <a href="">SUPERBONUS 110%</a>
+                <a href="">CONTRATTI</a>
+                <a href="">POLIZZE ASSICURATIVE</a>
+                <a href="">BONUS CASA 50%</a>
+                <a href="">AUDITOR</a>
+            </div>
+
+            <div class="submenu">
+                <h6>Dati richiedente</h6>
+            </div>
+
             <form action="{{ route('business.applicant.store') }}" method="POST">
                 @csrf
 

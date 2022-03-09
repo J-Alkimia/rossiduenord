@@ -226,3 +226,30 @@ tbody{
     }
 }
 //checkbox\\
+
+.menu{
+    padding: 0 20px;
+    border-bottom: 1px solid #BBBCBC;
+
+    a{
+        color: #BBBCBC;
+        font-weight: 700;
+
+        &:hover{
+            color: #BBBCBC!important;
+
+        }
+    }
+}
+
+.submenu{
+    padding: 15px 0 0px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $text;
+}
+
+.visited{
+    color: $bg-bt-blue!important;
+    border-bottom: 3px solid $bg-bt-blue;
+    margin: -2px!important;
+}
