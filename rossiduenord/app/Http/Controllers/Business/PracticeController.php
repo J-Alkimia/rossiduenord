@@ -17,7 +17,7 @@ class PracticeController extends Controller
     {   
         $practices = Practice::all();
         //ddd($practices);
-        return view('Business/practice.index', compact('practices'));
+        return view('business/practice.index', compact('practices'));
     }
 
     /**
@@ -39,7 +39,7 @@ class PracticeController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            //'applicant_id' => 'required | integer | exists:applicants,id',
+            'applicant_id' => 'required | integer | exists:applicants,id',
             'month' => 'nullable | string',
             'year' => 'nullable | numeric',
             'policy_name' => 'nullable | string',
@@ -63,9 +63,10 @@ class PracticeController extends Controller
 
         //$applicant = $validated['applicant_id'];
         //dd($validated);
-        $practice = new Practice($validated);
-        dd($practice);
-        return redirect()->route('business.practice.create', compact('practice'));
+        //dd($validated);
+        $validated['applicant_id'] = 1;
+        Practice::create($validated);
+        return redirect()->route('business.practice.create');
     }
 
     /**

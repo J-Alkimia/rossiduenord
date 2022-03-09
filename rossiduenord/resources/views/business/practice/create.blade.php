@@ -52,7 +52,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    Sei sicuro di volere eliminare e tutto il suo contenuto!
+                                    Sei sicuro di volere eliminare tutto il suo contenuto!
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">indietro</button>
@@ -74,7 +74,7 @@
             <form action="{{ route('business.practice.store') }}" method="POST">
                 @csrf
                 
-{{--                 <div class="d-flex">
+{{--                  <div class="d-flex">
                     <div style="width: 10%; margin-right: 20px;" class="form-group ">
                         <label for="id" class="text">{{ __('Numero pratica') }}</label>
                         <div>
@@ -101,8 +101,8 @@
                         </div>
                     </div>
                 </div>
-
- --}}                <div class="d-flex justify-content-between">
+ --}}
+                <div class="d-flex justify-content-between">
                     <h6>Richiesta polizza:</h6>
 
                     <div class="form-group" style="width: 15%;">

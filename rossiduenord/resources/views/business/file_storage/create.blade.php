@@ -27,7 +27,7 @@
                 <div class="form-group">
                     <label for="folder_id" class="text">Cartella</label>
                      <select style="height: 47px!important" class="form-control" name="folder_id" id="folder_id">
-                        <option value="">Seleziona cartella</option>
+                        <option selected disabled value="">Seleziona cartella</option>
                         @foreach($folders as $folder)
                             <option value="{{$folder->id}}">{{$folder->name}}</option>
                         @endforeach

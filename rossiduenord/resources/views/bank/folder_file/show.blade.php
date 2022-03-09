@@ -57,7 +57,7 @@
                                 <td>{{$file->title}}</td>
                                 <td>{{$file->created_at}}</td>
                                 <td>
-                                    <a href="{{ asset('storage/' . $file->file)}}" download="{{$file->title}}.pdf">scarica</a>
+                                    <a href="{{ asset('storage/' . $file->file)}}" download="{{$file->title}}">scarica</a>
                                 </td> 
                                 <td class="">
                                     <a href="{{route('bank.file.show', $file)}}" class="btn-custom white bg-green">
