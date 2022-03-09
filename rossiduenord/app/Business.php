@@ -36,4 +36,5 @@ class Business extends Authenticatable
     {
         return $this->belongsTo(User::class);
     }
+
 }

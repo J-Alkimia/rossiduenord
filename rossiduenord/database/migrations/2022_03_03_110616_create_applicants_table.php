@@ -17,14 +17,13 @@ class CreateApplicantsTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('type')->nullable();
+            $table->string('applicant');
             $table->string('name')->nullable();
+            $table->string('lastName')->nullable();
             $table->string('c_f')->nullable();
-            $table->string('p_iva')->nullable();
             $table->string('phone')->nullable();
             $table->string('mobile_phone')->nullable();
             $table->string('email')->nullable();
-            $table->string('pec');
             $table->string('role')->nullable();
             $table->timestamps();
         });

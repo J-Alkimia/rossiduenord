@@ -35,10 +35,10 @@
                         <a class="nav-link  {{Route::currentRouteName() == 'business.users.index' ? 'activ' : ''}}" href="{{route('business.users.index')}}">Gestione Utenti</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{Route::currentRouteName() == 'business.folder.index' ? 'activ' : ''}}" href="{{route('business.folder.index')}}" href="#">Gestione Cartelle/File</a>
+                        <a class="nav-link {{Route::currentRouteName() == 'business.folder.index' ? 'activ' : ''}}" href="{{route('business.folder.index')}}">Gestione Cartelle/File</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Gestione Pratiche</a>
+                        <a class="nav-link {{Route::currentRouteName() == 'business.practice.index' ? 'activ' : ''}}" href="{{route('business.practice.index')}}">Gestione Pratiche</a>
                     </li>
                 </ul>
             </nav>

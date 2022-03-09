@@ -101,4 +101,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Provider::class);
     }
+
+    public function applicant()
+    {
+        return $this->hasMany(Applicant::class);
+    }
+
 }

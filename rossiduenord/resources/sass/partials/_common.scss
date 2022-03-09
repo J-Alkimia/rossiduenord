@@ -9,12 +9,25 @@ nav{
     width: 15%;
     align-content: flex-start!important;
     border-right: 1px solid #707070;
+
+    a{
+        color: $text;
+        &:hover{
+            color: $text!important;
+            font-weight: 700;
+        }
+    }
 }
 a{
-    color: $text!important;
     &:hover{
-        text-decoration: none;
+        text-decoration: none!important;
+        color: white!important;
     }
+}
+
+.form-control:focus {
+    border-color: transparent!important;
+    box-shadow: 0px 0px 10px -5px!important;
 }
 
 //button
@@ -60,6 +73,9 @@ a{
 }
 
 //color
+.bg-body{
+    background-color: $bg-body!important;
+}
 .bg-black{
     background-color: $bg-bt-black;
 }
@@ -76,13 +92,16 @@ a{
     background-color: $bg-bt-green;
 }
 .white{
-    color: white!important;
+    color: white;
 }
 .black{
     color: $bg-bt-black;
 }
 .grey{
     color: $bg-md-grey;
+}
+.light-grey{
+    color: $light-grey;
 }
 
 //text
@@ -129,3 +148,81 @@ tbody{
 .sfondo{
     background-image: url('../../img/sfondo.png');
 }
+
+.disable{
+    filter: grayscale(100%);
+    opacity: 0.2;
+    &:hover{
+        text-decoration: none;
+        cursor: no-drop;
+    }
+}
+
+.icon_search{
+    width: 30px;
+    height: 30px;
+}
+
+.input_search{
+    width: 100%;
+    height: 47px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0px 0px 5px -2px;
+
+    &:focus-visible{
+        outline: none!important;
+    }
+}
+
+//checkbox custom
+.checkbox-wrapper {     
+    display: block;     
+    position: relative;     
+    padding-left: 25px;     
+    cursor: pointer;     
+    -webkit-user-select: none;     
+    -moz-user-select: none;     
+    -ms-user-select: none;     
+    user-select: none; 
+
+    input {     
+        position: absolute;     
+        opacity: 0;     
+        cursor: pointer;     
+        height: 0;     
+        width: 0; 
+    }
+
+    input:checked ~ .checkmark::after {     
+        display: block; 
+    }
+    
+    .checkmark {     
+        position: absolute;     
+        top: 0;     
+        left: 0;     
+        height: 15px;     
+        width: 15px;  
+        margin-top: 5px;   
+        border: 1px solid gray; 
+        border-radius: 3px;
+
+        &::after {     
+            content: "";     
+            position: absolute;     
+            left: 5px;     
+            top: 0px;     
+            width: 5px;     
+            height: 10px;     
+            border: solid #2196F3;     
+            border-width: 0 3px 3px 0;     
+            -webkit-transform: rotate(45deg);     
+            -ms-transform: rotate(45deg);     
+            transform: rotate(45deg);     
+            display: none; 
+        }
+    }
+}
+//checkbox\\

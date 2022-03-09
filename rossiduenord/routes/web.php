@@ -66,6 +66,8 @@ Route::middleware('business')
     Route::resource('users', 'UserController');
     Route::resource('folder', 'FolderController');
     Route::resource('file', 'FileController');
+    Route::resource('applicant', 'ApplicantController');
+    Route::resource('practice', 'PracticeController');
 });
 
 

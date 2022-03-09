@@ -108,10 +108,10 @@
                                     <a href="{{route('bank.folder.show', $related->id)}}" class="btn-custom white bg-green">
                                         Vedi
                                     </a>
-                                    <a href="{{route('bank.folder.edit', $related->id)}}" class="btn-custom white bg-black">
+                                    <a class="btn-custom white bg-black disable">
                                         Modifica
                                     </a>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del{{$related->id}}">
+                                    <button disabled type="button" class="btn-custom white bg-black disable" data-toggle="modal" data-target="#del{{$related->id}}">
                                         elimina
                                     </button>
 

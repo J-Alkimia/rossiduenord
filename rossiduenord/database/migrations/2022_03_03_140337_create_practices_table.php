@@ -15,21 +15,27 @@ class CreatePracticesTable extends Migration
     {
         Schema::create('practices', function (Blueprint $table) {
             $table->id();
-            $table->string('consultant');
-            $table->string('manager');
-            $table->string('total_advancement');
-            $table->string('first_advancement');
-            $table->string('during_advancement');
-            $table->string('after_advancement');
-            $table->string('estimated_amount');
-            $table->string('final_amount');
-            $table->string('reference_email');
-            $table->string('practice_state');
-            $table->string('real_estate_type');
-            $table->text('description');
-            $table->string('type_of_intervention');
-            $table->string('additional_info');
-            $table->string('note');
+            $table->bigInteger('applicant_id')->unsigned();
+            $table->foreign('applicant_id')->references('id')->on('applicants')->onDelete('cascade');
+            $table->string('month')->nullable();
+            $table->string('year')->nullable();
+            $table->string('policy_name')->nullable();
+            $table->string('address')->nullable();
+            $table->string('civic')->nullable();
+            $table->string('common')->nullable();
+            $table->string('province')->nullable();
+            $table->string('region')->nullable();
+            $table->string('cap')->nullable();
+            $table->string('work_start')->nullable();
+            $table->string('c_m')->nullable();
+            $table->string('assev_tecnica')->nullable();
+            $table->string('nominative')->nullable();
+            $table->string('lastName')->nullable();
+            $table->string('name')->nullable();
+            $table->string('policy')->nullable();
+            $table->string('request_policy')->nullable();
+            $table->text('description')->nullable();
+            $table->string('bonus')->nullable();
             $table->timestamps();
         });
     }
@@ -41,6 +47,11 @@ class CreatePracticesTable extends Migration
      */
     public function down()
     {
+        Schema::table('practices', function (Blueprint $table) {
+            $table->dropForeign(['applicant_id']);
+            $table->dropColumn('applicant_id');
+        });
+
         Schema::dropIfExists('practices');
     }
 }
