@@ -16,7 +16,7 @@
 
     <h6>Dati di Progetto</h6>
     <hr style="margin-top: 5px; background-color: #211e16;">
-    <div>
+    <div class="dati_progetto">
         <div class="d-flex">
             <p>È stata depositata la relazione tecnica prevista dall’art. 28 della legge 10/91 e dall’art. 8 comma 1 del D.lgs 192/05 e successive modificazioni</p>
             <label for="" style="margin-left: 20px">
@@ -50,7 +50,7 @@
         </div>
         <div class="d-flex align-items-center mt-5">
             <input type="checkbox" name="" id="">
-            <p style="margin: 0">Non è stata depositata la relazione tecnica in quanto si ricade nei casi di esclusione previsti dal comma 1 dell’art. 8 del del D.lgs 192/05 e dal punto 2,
+            <p class="m-0 ml-2">Non è stata depositata la relazione tecnica in quanto si ricade nei casi di esclusione previsti dal comma 1 dell’art. 8 del del D.lgs 192/05 e dal punto 2,
                 paragrafo 2.2. dell’allegato 1 del decreto 26/06/2015</p>
         </div>
 

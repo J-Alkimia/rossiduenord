@@ -304,6 +304,11 @@ label {
   color: #61a4d7;
 }
 
+.dati_progetto label {
+  color: #211e16 !important;
+  font-weight: 400 !important;
+}
+
 header {
   background-color: #615f5f;
   color: white;
