@@ -31,4 +31,20 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data: {
+        showDati: true,
+        showInterventi: false
+    },
+
+    methods: {
+        showpage1() {
+            this.showDati = true;
+            this.showInterventi = false
+        },
+        showpage2() {
+            this.showDati = false;
+            this.showInterventi = true;
+        }
+
+    }
 });

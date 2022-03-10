@@ -95,7 +95,7 @@ a{
     color: white;
 }
 .black{
-    color: $bg-bt-black;
+    color: $bg-bt-black!important;
 }
 .grey{
     color: $bg-md-grey;
@@ -309,6 +309,8 @@ label{
         background-color: white;
         padding: 10px 20px 3px;
         color: #61a4d7;
+        z-index: 1;
+        margin-bottom: -1px;
     }
 }
 

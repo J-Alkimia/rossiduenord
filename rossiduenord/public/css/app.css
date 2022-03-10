@@ -100,7 +100,7 @@ a:hover {
 }
 
 .black {
-  color: #383d3f;
+  color: #383d3f !important;
 }
 
 .grey {
@@ -302,6 +302,8 @@ label {
   background-color: white;
   padding: 10px 20px 3px;
   color: #61a4d7;
+  z-index: 1;
+  margin-bottom: -1px;
 }
 
 .dati_progetto label {
