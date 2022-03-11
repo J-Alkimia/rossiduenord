@@ -49797,7 +49797,21 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    showDati: true,
+    showInterventi: false
+  },
+  methods: {
+    showpage1: function showpage1() {
+      this.showDati = true;
+      this.showInterventi = false;
+    },
+    showpage2: function showpage2() {
+      this.showDati = false;
+      this.showInterventi = true;
+    }
+  }
 });
 
 /***/ }),

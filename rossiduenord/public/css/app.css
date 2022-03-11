@@ -100,7 +100,7 @@ a:hover {
 }
 
 .black {
-  color: #383d3f;
+  color: #383d3f !important;
 }
 
 .grey {
@@ -286,14 +286,29 @@ label {
 }
 
 .nav_bonus {
-  border-bottom: #BBBCBC 1px;
+  border-bottom: #BBBCBC 1px solid;
   margin-bottom: 20px;
+  padding: 0 20px;
 }
 .nav_bonus span {
   font-weight: 600;
   color: #BBBCBC;
   padding: 0 25px;
   cursor: pointer;
+}
+.nav_bonus .frame {
+  border: 1px solid #BBBCBC;
+  border-bottom: 0;
+  background-color: white;
+  padding: 10px 20px 3px;
+  color: #61a4d7;
+  z-index: 1;
+  margin-bottom: -1px;
+}
+
+.dati_progetto label {
+  color: #211e16 !important;
+  font-weight: 400 !important;
 }
 
 header {

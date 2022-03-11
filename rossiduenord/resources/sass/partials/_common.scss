@@ -95,7 +95,7 @@ a{
     color: white;
 }
 .black{
-    color: $bg-bt-black;
+    color: $bg-bt-black!important;
 }
 .grey{
     color: $bg-md-grey;
@@ -294,12 +294,30 @@ label{
 }
 
 .nav_bonus{
-    border-bottom: #BBBCBC 1px;
+    border-bottom: #BBBCBC 1px solid;
     margin-bottom: 20px;
+    padding: 0 20px;
     span{
         font-weight: 600;
         color: #BBBCBC;
         padding: 0 25px;
         cursor: pointer;
+    }
+    .frame{
+        border: 1px solid #BBBCBC;
+        border-bottom: 0;
+        background-color: white;
+        padding: 10px 20px 3px;
+        color: #61a4d7;
+        z-index: 1;
+        margin-bottom: -1px;
+    }
+}
+
+.dati_progetto{
+
+    label{
+        color: $text!important;
+        font-weight: 400!important;
     }
 }
