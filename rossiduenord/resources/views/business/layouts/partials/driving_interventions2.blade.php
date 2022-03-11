@@ -203,13 +203,273 @@
             <div class="d-flex align-items-center">
                 <p class="m-0">Le spese previste in progetto dei lavori al punto IN ammontano a*</p>
                 <label for="" class=" m-0 mr-4 black">
-                    <input type="text" value="500.115,13" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
+                    <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
                     €
                 </label>
             </div>
             <button class="add-button">Computo metrico</button>
         </div>
+        <p class="m-0 font-italic">* Incluso iva e spese professionali (es. progettazione, direzione lavori, assservazione tecnica e fiscale)</p>
+        
+        <div class="d-flex align-items-center justify-content-between mt-3" style="width:100%;">
+            <div class="d-flex align-items-center">
+                <p class="m-0">La spesa prevista per gli interventi di cui ai punti PV, PO, PS e IN ammonta a*</p>
+                <label for="" class=" m-0 mr-4 black">
+                    <input type="text" value="0,00" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
+                    €
+                </label>
+            </div>
+        </div>
         <p class="m-0 mt-2 font-italic">* Incluso iva e spese professionali (es. progettazione, direzione lavori, assservazione tecnica e fiscale)</p>
+
+        <div class="d-flex align-items-center justify-content-between mt-3" style="width:100%;">
+            <div class="d-flex align-items-center">
+                <p class="m-0">La spesa massima ammissibile è pari a</p>
+                <label for="" class=" m-0 mr-4 black">
+                    <input type="text" value="1.418.170,00" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
+                    €
+                </label>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between mt-3" style="width:100%;">
+            <div class="d-flex align-items-center">
+                <p class="m-0">Il risparmio di energia primaria non rinnovabile di progetto è</p>
+                <label for="" class=" m-0 mr-4 black">
+                    <input type="text" value="0,00" style="width: 120px;" class="border ml-2 px-2 text-right">
+                    KWh/anno
+                </label>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <label class="checkbox-wrapper d-flex">
+                <input type="checkbox" name="" value="">     
+                <span class="checkmark"></span> 
+                <span class="black" ><b>SS. Schermate solari e chiusure oscuranti</b></span>
+            </label>
+            <div style="width: 100%; height: 200px; background-color: #f2f2f2 ">
+        
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between mt-2" style="width:100%;">
+            <div class="d-flex align-items-center">
+                <p class="m-0">Le spese previste in progetto dei lavori al punto SS ammontano a*</p>
+                <label for="" class=" m-0 mr-4 black">
+                    <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
+                    €
+                </label>
+            </div>
+            <button class="add-button">Computo metrico</button>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between mt-3" style="width:100%;">
+            <div class="d-flex align-items-center">
+                <p class="m-0">La spesa massima ammissibile è pari a</p>
+                <label for="" class=" m-0 mr-4 black">
+                    <input type="text" value="1.418.170,00" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
+                    €
+                </label>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between mt-3" style="width:100%;">
+            <div class="d-flex align-items-center">
+                <p class="m-0">Il risparmio di energia primaria non rinnovabile di progetto è</p>
+                <label for="" class=" m-0 mr-4 black">
+                    <input type="text" value="0,00" style="width: 120px;" class="border ml-2 px-2 text-right">
+                    KWh/anno
+                </label>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <label class="checkbox-wrapper d-flex">
+                <input type="checkbox" name="" value="">     
+                <span class="checkmark"></span> 
+                <span class="black" ><b>2.Intervento di sostituzione degli impianti di climatizzazione invernale esistenti</b></span>
+            </label>
+        </div>
+        <p>Con impianti dotati di:</p>
+        <hr>
+
+        <div class="mt-5">
+            <label class="checkbox-wrapper d-flex">
+                <input type="checkbox" name="" value="">     
+                <span class="checkmark"></span> 
+                <span class="black" ><b>CC. Caldaie a condensazione</b></span>
+            </label>
+            <div style="width: 100%; height: 200px; background-color: #f2f2f2 ">
+        
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <label class="checkbox-wrapper d-flex">
+                <input type="checkbox" name="" value="">     
+                <span class="checkmark"></span> 
+                <span class="black" ><b>GA. Generatori di aria calda a condensazione</b></span>
+            </label>
+            <div style="width: 100%; height: 200px; background-color: #f2f2f2 ">
+        
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <label class="checkbox-wrapper d-flex">
+                <input type="checkbox" name="" value="">     
+                <span class="checkmark"></span> 
+                <span class="black" ><b>PCA. Pompe di calore ad assorbimento a…</b></span>
+            </label>
+            <div style="width: 100%; height: 200px; background-color: #f2f2f2 ">
+        
+            </div>
+        </div>
+        <div class="mt-5">
+            <label class="checkbox-wrapper d-flex">
+                <input type="checkbox" name="" value="">     
+                <span class="checkmark"></span> 
+                <span class="black" ><b>SI. Sistemi ibridi</b></span>
+            </label>
+            <div style="width: 100%; height: 200px; background-color: #f2f2f2 ">
+        
+            </div>
+        </div>
+
+        <div>
+            <div class="mt-5">
+                <label class="checkbox-wrapper d-flex">
+                    <input type="checkbox" name="" value="">     
+                    <span class="checkmark"></span> 
+                    <span class="black" ><b>SA. Installazione di scaldacqua a pompa di c…</b></span>
+                </label>
+                <p class="font-italic">In sostituzione di scaldacqua tradizionali con scaldacqua a pompa di calore dedicati alla produzione di acqua calda sanitaria</p>
+                <div style="width: 100%; height: 200px; background-color: #f2f2f2 ">
+            
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between mt-2" style="width:100%;">
+                <div class="d-flex align-items-center">
+                    <p class="m-0">Il costo complessivo previsto degli interventi sull’impianto (Punto 2) ammonta a *</p>
+                    <label for="" class=" m-0 mr-4 black">
+                        <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
+                        €
+                    </label>
+                </div>
+                <button class="add-button">Computo metrico</button>
+            </div>
+            <p class="m-0 mt-2 font-italic">* Incluso iva e spese professionali (es. progettazione, direzione lavori, assservazione tecnica e fiscale)</p>
+
+            <div class="d-flex align-items-center justify-content-between mt-3" style="width:100%;">
+                <div class="d-flex align-items-center">
+                    <p class="m-0">La spesa massima ammissibile per la sostituzione degli impianti è pari a</p>
+                    <label for="" class=" m-0 mr-4 black">
+                        <input type="text" value="709.072,00" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
+                        €
+                    </label>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between mt-3" style="width:100%;">
+                <div class="d-flex align-items-center">
+                    <p class="m-0">Il risparmio di energia primaria non rinnovabile di progetto è</p>
+                    <label for="" class=" m-0 mr-4 black">
+                        <input type="text" value="0,00" style="width: 120px;" class="border ml-2 px-2 text-right">
+                        KWh/anno
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="mt-5">
+                <label class="checkbox-wrapper d-flex">
+                    <input type="checkbox" name="" value="">     
+                    <span class="checkmark"></span> 
+                    <span class="black" ><b>CO. Sistemi di microgenerazione</b></span>
+                </label>
+                <div style="width: 100%; height: 200px; background-color: #f2f2f2 ">
+            
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between mt-2" style="width:100%;">
+                <div class="d-flex align-items-center">
+                    <p class="m-0">Il costo previsto per i sistemi di microgenerazione CO) ammonta a *</p>
+                    <label for="" class=" m-0 mr-4 black">
+                        <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
+                        €
+                    </label>
+                </div>
+                <button class="add-button">Computo metrico</button>
+            </div>
+            <p class="m-0 mt-2 font-italic">* Incluso iva e spese professionali (es. progettazione, direzione lavori, assservazione tecnica e fiscale)</p>
+
+            <div class="d-flex align-items-center justify-content-between mt-3" style="width:100%;">
+                <div class="d-flex align-items-center">
+                    <p class="m-0">La spesa massima ammissibile per l’intrevento è pari a</p>
+                    <label for="" class=" m-0 mr-4 black">
+                        <input type="text" value="90.909,00" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
+                        €
+                    </label>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between mt-3" style="width:100%;">
+                <div class="d-flex align-items-center">
+                    <p class="m-0">Il risparmio di energia primaria non rinnovabile di progetto è</p>
+                    <label for="" class=" m-0 mr-4 black">
+                        <input type="text" value="0,00" style="width: 120px;" class="border ml-2 px-2 text-right">
+                        KWh/anno
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="mt-5">
+                <label class="checkbox-wrapper d-flex">
+                    <input type="checkbox" name="" value="">     
+                    <span class="checkmark"></span> 
+                    <span class="black" ><b>IB. Generatori a bioma…</b></span>
+                </label>
+                <p class="font-italic">Installazione di impianti di climatizzazione invernale dotati di generatori di calore alimentati da biomasse combustibili</p>
+                <div style="width: 100%; height: 200px; background-color: #f2f2f2 ">
+            
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between mt-2" style="width:100%;">
+                <div class="d-flex align-items-center">
+                    <p class="m-0">Il costo previsto per i generatori a biomassa IB) ammonta a *</p>
+                    <label for="" class=" m-0 mr-4 black">
+                        <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
+                        €
+                    </label>
+                </div>
+                <button class="add-button">Computo metrico</button>
+            </div>
+            <p class="m-0 mt-2 font-italic">* Incluso iva e spese professionali (es. progettazione, direzione lavori, assservazione tecnica e fiscale)</p>
+
+            <div class="d-flex align-items-center justify-content-between mt-3" style="width:100%;">
+                <div class="d-flex align-items-center">
+                    <p class="m-0">La spesa massima ammissibile per l’intrevento è pari a</p>
+                    <label for="" class=" m-0 mr-4 black">
+                        <input type="text" value="709.072,00" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
+                        €
+                    </label>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between mt-3" style="width:100%;">
+                <div class="d-flex align-items-center">
+                    <p class="m-0">Il risparmio di energia primaria non rinnovabile di progetto è</p>
+                    <label for="" class=" m-0 mr-4 black">
+                        <input type="text" value="0,00" style="width: 120px;" class="border ml-2 px-2 text-right">
+                        KWh/anno
+                    </label>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>
