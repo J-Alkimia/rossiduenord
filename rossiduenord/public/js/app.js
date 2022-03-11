@@ -49799,17 +49799,25 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app',
   data: {
-    showDati: true,
-    showInterventi: false
+    showDati: false,
+    showInterventi: false,
+    showInterventi2: true
   },
   methods: {
     showpage1: function showpage1() {
       this.showDati = true;
       this.showInterventi = false;
+      this.showInterventi2 = false;
     },
     showpage2: function showpage2() {
       this.showDati = false;
       this.showInterventi = true;
+      this.showInterventi2 = false;
+    },
+    showpage3: function showpage3() {
+      this.showDati = false;
+      this.showInterventi = false;
+      this.showInterventi2 = true;
     }
   }
 });

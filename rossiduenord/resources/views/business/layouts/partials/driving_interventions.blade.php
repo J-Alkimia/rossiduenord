@@ -316,12 +316,15 @@
     </label>      
 </div>
 
-<div class="d-flex align-items-center mt-2 mb-4" style="width:80%;">
-    <p class="m-0">Il costo complessivo di progetto degli interventi sull’impianto ammonta a *</p>
-    <label for="" class=" m-0 mr-4 black">
-        <input type="text" value="0,00" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
-        €
-    </label>
+<div class="d-flex align-items-center justify-content-between mt-3" style="width:80%;">
+    <div class="d-flex align-items-center">
+        <p class="m-0">Il costo complessivo di progetto degli interventi sull’impianto ammonta a *</p>
+        <label for="" class=" m-0 mr-4 black">
+            <input type="text" value="0,00" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
+            €
+        </label>
+    </div>
+    <button class="add-button">Computo metrico</button>
 </div>
 
 <p class="font-italic">* Incluso iva e spese professionali (es. progettazione, direzione lavori, assservazione tecnica e fiscale)</p>
@@ -333,3 +336,73 @@
         €
     </label>
 </div>
+
+<div class="d-flex justify-content-between" style="width: 80%">
+    <p class="m-0 mt-2 font-weight-bold">Sono stati conclusi i seguenti lavori</p>
+    <table class="table_bonus" style="width: 70%">
+        <thead>
+            <tr>
+                <td style="width:40%;"><b>Lavori</b></td>
+                <td style="width:30%;"><b>Conclusi</b></td>
+                <td style="width:30%;"><b>SAL</b></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-right"></td>
+                <td class="text-right"></td>
+                <td class="text-right"></td>
+            </tr>
+        </tbody>
+    </table>    
+</div>
+
+<p class="font-weight-bold m-0 mt-5">per un ammontare pari a</p>
+<div class="d-flex" style="width: 80%">
+    <div class="d-flex align-items-center">
+        <span>SAL. n.1</span>
+        <label for="" class="d-flex flex-column align-items-end mb-3 mr-1">
+            <small class="black">almeno al 30%</small>
+            <input type="text" value="0,00" class="ml-2 text-right px-2 border" style="width:120px">
+        </label>
+        <span>€</span>
+    </div>
+    <div class="d-flex align-items-center ml-4">
+        <span>SAL. n.2</span>
+        <label for="" class="d-flex flex-column align-items-end mb-3 mr-1">
+            <small class="black">almeno al 60%</small>
+            <input type="text" value="0,00" class="ml-2 text-right px-2 border" style="width:120px">
+        </label>
+        <span>€</span>
+    </div>
+    <div class="d-flex align-items-center ml-4">
+        <span>SAL.F</span>
+        <label for="" class="d-flex flex-column align-items-end mr-1 mb-0">
+            <input type="text" value="0,00" class="ml-2 border text-right px-2" style="width:120px;">
+        </label>
+        <span>€</span>
+    </div>
+    <div class="d-flex align-items-center ml-4">
+        <span>SAL. 1+2</span>
+        <label for="" class="d-flex flex-column align-items-end mr-1 mb-0">
+            <input type="text" value="0,00" class="ml-2 border text-right px-2" style="width:120px; background-color: #f2f2f2">
+        </label>
+        <span>€</span>
+    </div>
+    <div class="d-flex align-items-center ml-4">
+        <span>SAL. 1+2 F</span>
+        <label for="" class="d-flex flex-column align-items-end mr-1 mb-0">
+            <input type="text" value="0,00" class="ml-2 border text-right px-2" style="width:120px; background-color: #f2f2f2">
+        </label>
+        <span>€</span>
+    </div>
+</div>
+
+<div class="d-flex align-items-center mt-2 mb-4" style="width:80%;">
+    <p class="m-0 font-weight-bold">Il risparmio di energia primaria non rinnovabile di progetto è</p>
+    <label for="" class=" m-0 mr-4 black">
+        <input type="text" value="0,00" style="width: 120px;" class="border ml-2 px-2 text-right">
+        KWh/anno
+    </label>
+</div>
+

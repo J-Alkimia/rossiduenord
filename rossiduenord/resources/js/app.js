@@ -32,18 +32,26 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     data: {
-        showDati: true,
-        showInterventi: false
+        showDati: false,
+        showInterventi: false,
+        showInterventi2: true, 
     },
 
     methods: {
         showpage1() {
             this.showDati = true;
             this.showInterventi = false
+            this.showInterventi2 = false
         },
         showpage2() {
             this.showDati = false;
-            this.showInterventi = true;
+            this.showInterventi = true
+            this.showInterventi2 = false
+        },
+        showpage3() {
+            this.showDati = false;
+            this.showInterventi = false
+            this.showInterventi2 = true
         }
 
     }
