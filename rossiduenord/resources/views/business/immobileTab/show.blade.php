@@ -351,233 +351,70 @@
                 <div class="col-md"></div>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="container" style="margin-bottom:20px;">
-         <div class="row">
-            <div class="col-md">
-                 
-            </div>
-            <div class="col-md">
-             
-            </div>
-         </div>
-        </div>
-
-
-         
-         
-        <div class="container"> 
+            <div class="mt-5"> 
             <h6>Lista condomini</h6>
-        <div class="col-md-12">
-        <table id="dataTable_businessData" class="col-md-12 display" style="width:100% border:none !important;">
-        <thead>
-            <tr>
-                <th>N.</th>
-                <th>Nome/Ragione soc…</th>
-                <th>Cognome</th>
-                <th>Telefono</th>
-                <th>Email</th>
-                <th>Codice fiscale/Pa…</th>
+                <div class="row">
+                    <div class="col-md"> <!-- Data table content -->
+                    <table class="table_bonus" style="width: 100%">
+            <thead>
+                <tr>
+                    <td class="text-center" style="width:5%;"><b>N.</b></td>
+                    <td style="width:20%;"><b>Nome/Ragione soc…</b></td>
+                    <td style="width:13%;"><b>Cognome</b></td>
+                    <td style="width:10%;"><b>Telefono </b></td>
+                    <td style="width:10%;"><b>Email</b></td>
+                    <td style="width:15%;"><b>Codice fiscale/Pa…</b></td>
+                    <td style="width:15%;"><b>Mille…</b></td>
+                    <td style="width:15%;"><b>Foglio</b></td>
+                    <td style="width:10%;"><b>Part.</b></td>
+                    <td style="width:15%;"><b>sub</b></td>
+                    <td style="width:15%;"><b>Cate…</b></td>
+                    <td style="width:15%;"><b>sub…</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td class="text-center">Company test</td>
+                    <td class="text-right">Mario</td>
+                    <td class="text-right">3281000000</td>
+                    <td class="text-right">mario.rossi@gmail.com</td>
+                    <td class="text-right">HHTOKD9836UEHEOKS</td>
+                    <td class="text-center">60,240</td>
+                    <td class="text-center">18</td>
+                    <td class="text-right">1212</td>
+                    <td class="text-right">28</td>
+                    <td class="text-center">A/3</td>
+                    <td class="text-center">0,00</td>
+                </tr>
 
-                <th>Mille…</th>
-                <th>Foglio</th>
-                <th>Part.</th>
-                <th>Sub</th>
-                <th>Cate…</th>
-                <th>Sup…</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Enkeleida</td>
-                <td>Metushi</td>
-                <td>349 0000000</td>
-                <td>Enkeleida.metushi@gmail.com</td>
-                <td>MTSNLD71H57Z100W</td>
-                <td>60,240</td>
-                <td>18</td>
-                <td>1217</td>
-                <td>28</td>
-                <td>A/3</td>
-                <td>0,00</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Enkeleida</td>
-                <td>Metushi</td>
-                <td>349 0000000</td>
-                <td>Enkeleida.metushi@gmail.com</td>
-                <td>MTSNLD71H57Z100W</td>
-                <td>60,240</td>
-                <td>18</td>
-                <td>1217</td>
-                <td>28</td>
-                <td>A/3</td>
-                <td>0,00</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Enkeleida</td>
-                <td>Metushi</td>
-                <td>349 0000000</td>
-                <td>Enkeleida.metushi@gmail.com</td>
-                <td>MTSNLD71H57Z100W</td>
-                <td>60,240</td>
-                <td>18</td>
-                <td>1217</td>
-                <td>28</td>
-                <td>A/3</td>
-                <td>0,00</td>
-            </tr>
-      
-        </tbody>
-  
+                <tr>
+                    <td class="text-center">2</td>
+                    <td class="text-center">Company test2</td>
+                    <td class="text-right">Mario</td>
+                    <td class="text-right">3281000000</td>
+                    <td class="text-right">mario.rossi@gmail.com</td>
+                    <td class="text-right">HHTOKD9836UEHEOKS</td>
+                    <td class="text-center">60,240</td>
+                    <td class="text-center">18</td>
+                    <td class="text-right">1212</td>
+                    <td class="text-right">28</td>
+                    <td class="text-center">A/3</td>
+                    <td class="text-center">0,00</td>
+                </tr>
+            </tbody>
         </table>
-        </div>
-        </div>
-
-
-
-
-         <div class="row">
-            <div class="form-group">
-                 
-            </div>
-         </div>
-
-         <div class="row">
-            <div class="form-group">
-                 
-            </div>
-         </div>
+                    </div>
+                </div>
+           </div>
 
 
         </div>
 
-        
-    </div>
+    </div> <!-- Fine primo contenitore con sfondo bianco -->
+
+
+
 
     <!-- Ultima Sezione: Dati Amministrazione -->
     <div class="" style="background-color: white; padding:30px; margin-top:-50px;" >
@@ -647,12 +484,6 @@
 
     </div>
 
-
-
-    <br/>
-    <br/>
-    <br/>
-    <br/>
     <br/>
     <br/>
     <br/>
