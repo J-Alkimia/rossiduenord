@@ -200,9 +200,6 @@
             </div>
 
 
-
-
-
             <div class="row" style="margin-top:5%;">
              <div class="col-md-7">
                 <p style="display:inline-block; margin-right:25px; font-weight:500;">L'edificio è sottoposto a vincoli previsti dal codice dei beni culturali e del paesaggio</p> 
@@ -315,8 +312,6 @@
                 </div>
             </div>
 
-
-
             <div class="row">
              <div class="col-md-3">
                 <p style="display:inline-block; margin-right:25px; font-weight:500;">Autorizzazione edilizia</p> 
@@ -333,6 +328,27 @@
                         <label style="margin-right:15px;" for="">Edificio storico senza tit. edilizio</label>
                     </form>
                 </div>
+            </div>
+
+
+            <div class="row" >
+                <div class="col-md">
+                    <div class="row"> 
+                        <div class="col-md">
+                            <label>Num. licenza/titolo</label><br/>
+                            <input class="col-md" value="16061/7372" type="text" width="100%" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+                        </div>
+                        <div class="col-md">
+                            <label>Data licenza/titolo</label><br/>
+                            <input class="col-md" value="19/12/1994" type="text" width="100%" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+                        </div>
+                        <div class="col-md">
+                            <label>Anno costruzione</label><br/>
+                            <input class="col-md" value="1995" type="text" width="100%" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md"></div>
             </div>
 
 
@@ -562,4 +578,89 @@
 
         
     </div>
+
+    <!-- Ultima Sezione: Dati Amministrazione -->
+    <div class="" style="background-color: white; padding:30px; margin-top:-50px;" >
+    <h6>Dati Amministrazione</h6>
+     <div class="row"> 
+        <div class="col-md form-group">
+            <label style="display:inline-block;" >Nominativo</label><br/>
+            <input type="text" class="col-md-12" value="Crystal D’Antonio" style="height:40px; border-radius:2px; border:1px solid #DBDCDB; background-color: #F2F2F2;" disabled />
+        </div>
+     </div> 
+     <div class="row">  
+        <div class="col-md form-group">
+            <label style="display:inline-block;" >Cognome</label><br/>
+            <input type="text" class="col-md" value="D’Antonio" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+        </div>
+        <div class="col-md form-group">
+            <label style="display:inline-block;" >Nome</label><br/>
+            <input type="text" class="col-md" value="Giovanni Marco" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+        </div>
+        <div class="col-md form-group">
+            <label style="display:inline-block;" >Codice fiscale</label><br/>
+            <input type="text" class="col-md" value="DNTGNN73R29D157T" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+        </div>
+     </div>
+
+
+
+     <div class="row">  
+        <div class="col-md form-group">
+            <label style="display:inline-block;" >Indirizzo</label><br/>
+            <input type="text" class="col-md" value="" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+        </div>
+        <div class="col-md">
+            <div class="row">
+                <div class="col-md form-group">
+                    <label style="display:inline-block;" >Città</label><br/>
+                    <input type="text" class="col-md" value="" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+                </div>
+                <div class="col-md form-group">
+                    <label style="display:inline-block;" >Provincia</label><br/>
+                    <input type="text" class="col-md" value="" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+                </div>
+                <div class="col-md form-group">
+                    <label style="display:inline-block;" >CAP</label><br/>
+                    <input type="text" class="col-md" value="" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+                </div>
+            </div>
+        </div>
+     </div>
+
+
+
+     <div class="row"> 
+        <div class="col-md form-group">
+            <label style="display:inline-block;" >Telefono</label><br/>
+            <input type="text" class="col-md" value="" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+        </div>
+        <div class="col-md form-group">
+            <label style="display:inline-block;" >Cellulare</label><br/>
+            <input type="text" class="col-md" value="" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+        </div>
+        <div class="col-md form-group">
+            <label style="display:inline-block;" >Email</label><br/>
+            <input type="text" class="col-md" value="info.dantonio@gmail.com" style="height:40px; border-radius:2px; border:1px solid #DBDCDB;" />
+        </div>
+     </div>
+
+    </div>
+
+
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+    <div class="box-fixed">
+        <button class="back-button mr-2">Annulla</button>
+        <button class="add-button">Conferma</button>
+    </div>
+
 @endsection
