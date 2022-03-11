@@ -73,7 +73,7 @@
                 PRATICA
             </a>
             <a href="">SOGGETTI E IMPORTI</a>
-            <a href="">IMMOBILE</a>
+            <a href="{{route('business.test2') }}" >IMMOBILE</a>
             <a href="">FOTO DA APP</a>
             <a href="">DOCUMENTI RICHIEST</a>
             <a href="{{route('business.superbonus.index') }}" class="{{Route::currentRouteName() == 'business.superbonus.index' ? 'visited' : ''}}">

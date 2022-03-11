@@ -70,6 +70,8 @@ Route::middleware('business')
     Route::resource('practice', 'PracticeController');
     Route::resource('superbonus', 'SuperBonusController');
     Route::get('superbonus/1', 'SuperBonusController@test')->name('test');
+    Route::get('immobile/1', 'ImmobileController@test')->name('test2');
+    Route::resource('immobile', 'ImmobileController');
 });
 
 
