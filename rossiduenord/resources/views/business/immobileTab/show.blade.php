@@ -354,7 +354,7 @@
             <div class="mt-5"> 
             <h6>Lista condomini</h6>
                 <div class="row">
-                    <div class="col-md"> <!-- Data table content -->
+        <div class="col-md"> <!-- Data table content -->
                     <table class="table_bonus" style="width: 100%">
             <thead>
                 <tr>
@@ -412,9 +412,6 @@
         </div>
 
     </div> <!-- Fine primo contenitore con sfondo bianco -->
-
-
-
 
     <!-- Ultima Sezione: Dati Amministrazione -->
     <div class="" style="background-color: white; padding:30px; margin-top:-50px;" >
