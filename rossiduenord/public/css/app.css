@@ -74,6 +74,20 @@ a:hover {
   border: 1px solid #707070;
 }
 
+.btn-delete {
+  width: 87px;
+  height: 27px;
+  border: none;
+  font-weight: 600;
+  background-color: #E4003C;
+  color: white;
+}
+.btn-delete:hover {
+  background-color: white;
+  color: #E4003C;
+  border: 1px solid #E4003C;
+}
+
 #select-all:hover {
   background-color: black;
 }
@@ -347,10 +361,10 @@ label {
 
 .select {
   content: url("../../img/icon/arrow_down.svg");
-  width: 40px;
+  width: 20px;
   height: 10px;
   position: absolute;
-  right: 1px;
+  right: 5px;
   top: 15px;
   background-color: #f2f2f2;
 }
