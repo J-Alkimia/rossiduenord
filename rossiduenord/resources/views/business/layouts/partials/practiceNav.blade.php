@@ -72,7 +72,7 @@
             <a href="{{route('business.practice.create') }}" class="{{Route::currentRouteName() == 'business.practice.create' ? 'visited' : ''}}">
                 PRATICA
             </a>
-            <a href="">SOGGETTI E IMPORTI</a>
+            <a href="{{route('business.test3') }}">SOGGETTI E IMPORTI</a>
             <a href="{{route('business.test2') }}" >IMMOBILE</a>
             <a href="">FOTO DA APP</a>
             <a href="">DOCUMENTI RICHIEST</a>
