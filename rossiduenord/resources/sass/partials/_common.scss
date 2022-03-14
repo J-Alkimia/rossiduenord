@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+input{
+    font-weight: 600;
+}
 // tag
 nav{
     width: 15%;
@@ -116,7 +119,7 @@ a{
     color: $bg-bt-black!important;
 }
 .grey{
-    color: $bg-md-grey;
+    color: $bg-md-grey!important;
 }
 .light-grey{
     color: $light-grey;
@@ -129,7 +132,9 @@ a{
 .text-md{
     font-size: 17px;
 }
-
+.font-500{
+    font-weight: 500;
+}
 //container
 .popup {
     width: 478px;
@@ -340,3 +345,23 @@ label{
         font-weight: 400!important;
     }
 }
+
+.scroll{
+    overflow-y: auto;
+    height: 100vh;
+
+    &::-webkit-scrollbar { 
+        display: none;
+    } 
+}
+
+.select {
+    content: url('../../img/icon/arrow_down.svg');
+    width: 40px;
+    height: 10px;
+    position: absolute;
+    right: 1px;
+    top: 15px;
+    background-color: #f2f2f2;
+}
+

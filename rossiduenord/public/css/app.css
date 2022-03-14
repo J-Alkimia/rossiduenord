@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+input {
+  font-weight: 600;
+}
+
 nav {
   width: 15%;
   height: 100vh;
@@ -121,7 +125,7 @@ a:hover {
 }
 
 .grey {
-  color: #818387;
+  color: #818387 !important;
 }
 
 .light-grey {
@@ -134,6 +138,10 @@ a:hover {
 
 .text-md {
   font-size: 17px;
+}
+
+.font-500 {
+  font-weight: 500;
 }
 
 .popup {
@@ -327,6 +335,24 @@ label {
 .dati_progetto label {
   color: #211e16 !important;
   font-weight: 400 !important;
+}
+
+.scroll {
+  overflow-y: auto;
+  height: 100vh;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.select {
+  content: url("../../img/icon/arrow_down.svg");
+  width: 40px;
+  height: 10px;
+  position: absolute;
+  right: 1px;
+  top: 15px;
+  background-color: #f2f2f2;
 }
 
 header {
