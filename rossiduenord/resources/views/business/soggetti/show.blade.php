@@ -8,12 +8,12 @@
             <div class="px-20">
                 <ul class="nav nav-tabs pl-4" id="sectionSoggetti_pratiche" role="tablist">
                     <li class="nav-item">
-                        <span class="nav-link active" id="soggetti-tab" data-toggle="tab" href="#soggetti" role="tab" aria-controls="soggetti" aria-selected="true" style="color: #BBBCBC; font-weight:500; cursor: pointer;">
+                        <span @click="active = !active" class="nav-link" :class="[active ? 'blue frame' : '']" id="soggetti-tab" data-toggle="tab" href="#soggetti" role="tab" aria-controls="soggetti" aria-selected="true" style="color: #BBBCBC; font-weight:500; cursor: pointer;">
                             Soggetti
                         </span>
                     </li>
                     <li class="nav-item">
-                        <span class="nav-link" id="responsabili-tab" data-toggle="tab" href="#responsabili" role="tab" aria-controls="responsabili" aria-selected="false" style="color: #BBBCBC; font-weight:500; cursor: pointer;">
+                        <span  @click="active = !active" class="nav-link" :class="[!active ? 'blue' : '']" id="responsabili-tab" data-toggle="tab" href="#responsabili" role="tab" aria-controls="responsabili" aria-selected="false" style="color: #BBBCBC; font-weight:500; cursor: pointer;">
                             Responsabili
                         </span>
                     </li>
@@ -32,10 +32,14 @@
                                     <input type="text" class="col-md-12" value="Rossidue Nord Rossidue Nord" style="height:40px; border-radius:2px; border:1px solid #DBDCDB; background-color: #F2F2F2;" disabled />
                                 </div>
                                 <div class="form-group">
-                                    <label style="" >Azienda edile</label>
-                                    <span class="ml-2">
-                                        <input type="checkbox" class="mr-1" checked /><label >Pratica in regola</label>
-                                    </span><br/>
+                                    <div class="d-flex">
+                                        <span class="light-grey font-500 mr-3">Azienda edile</span>
+                                        <label class="checkbox-wrapper d-flex">
+                                            <input type="checkbox" name="" value="">     
+                                            <span class="checkmark"></span> 
+                                            <span>Pratica in regola</span>
+                                        </label>
+                                    </div>
                                     <input type="text" class="col-md-12" value="Rossidue Nord" style="height:40px; border-radius:2px; border:1px solid #DBDCDB; background-color: #F2F2F2;" disabled />
                                 </div>
                                 <div class="form-group">
@@ -132,7 +136,7 @@
                                             <td class="text-left px-3">
                                                 <div class="d-flex justify-content-between position-relative">
                                                     <span class="mt-2">Project Manager</span>
-                                                    <div class="select" style="background-color: transparent"/>
+                                                    <div class="select" style="background-color: transparent; cursor:pointer"></div>
                                                 </div>
                                             </td>
                                             <td class="text-left pl-3">afilippi@italsoftspa.it</td>

@@ -5,20 +5,22 @@
     @include('business.layouts.partials.message')
     @include('business.layouts.partials.practiceNav')
 
-    <table class="table_bonus">
-        <thead>
-            <tr>
-                <td style="width:50%;"><b>Immobile</b></td>
-                <td style="width:50%;"><b>Data inserimento</b></td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <a href="{{route('business.test') }}">Condominio Camelia Via Piave 15, 36060 Romano D'ezzelino VI</a>
-                </td>
-                <td><a href="{{route('business.test') }}">09/08/2021</a></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="px-20 pb-20 pt-20">
+        <table class="table_bonus">
+            <thead>
+                <tr>
+                    <td style="width:50%;"><b>Immobile</b></td>
+                    <td style="width:50%;"><b>Data inserimento</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="{{route('business.test') }}">Condominio Camelia Via Piave 15, 36060 Romano D'ezzelino VI</a>
+                    </td>
+                    <td><a href="{{route('business.test') }}">09/08/2021</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 @endsection
