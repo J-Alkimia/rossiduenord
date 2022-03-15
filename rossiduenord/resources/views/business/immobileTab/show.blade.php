@@ -402,10 +402,29 @@
                     <td class="text-center">A/3</td>
                     <td class="text-center">0,00</td>
                 </tr>
-            </tbody>
-        </table>
+             </tbody>
+            </table>
+                </div>
+              </div>
+
+                
+                <div class="row mt-5">
+                    <div class="col-md">
+                        <h6>Num. licenza/titolo</h6>
+                        <a class="col-md-3 mb-3" href="" style="display:block; border-radius:3px; height:218px; width:326px; border:1px solid #DBDCDB; background-color:#F2F2F2;" ><img src="../resources/img/image_rectangle.png" alt="" title="none" /></a>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <input class="pl-3 pr-3" type="button" value="Esporta lista condomini" style="color:white; background-color:#383D3F; border:1px solid none; height:27px; width:189px; font-size:13px; font-weight:bold;" />
+                            </div>
+                            <div class="col-md-3" >
+                                <label >Tot. millesimi</label>
+                                <input type="text" value="1.000,00" style="border:1px solid #DBDCDB; border-radius:3px;" />
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+
            </div>
 
 
@@ -485,7 +504,8 @@
     <br/>
     <br/>
     <br/>
-    
+
+    </div>{{-- chiusura div content-main praticeNav --}}
     <div class="box-fixed">
         <button class="back-button mr-2">Annulla</button>
         <button class="add-button">Conferma</button>
