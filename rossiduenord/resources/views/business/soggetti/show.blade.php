@@ -5,10 +5,9 @@
     @include('business.layouts.partials.message')
     @include('business.layouts.partials.practiceNav')
 
-
      <ul class="nav nav-tabs" id="sectionSoggetti_pratiche" role="tablist">
-            <li class="nav-item"><a class="nav-link active" id="soggetti-tab" data-toggle="tab" href="#soggetti" role="tab" aria-controls="soggetti" aria-selected="true">Soggetti</a></li>
-            <li class="nav-item"><a class="nav-link" id="responsabili-tab" data-toggle="tab" href="#responsabili" role="tab" aria-controls="responsabili" aria-selected="false">Responsabili</a></li>
+            <li class="nav-item"><a class="nav-link active" id="soggetti-tab" data-toggle="tab" href="#soggetti" role="tab" aria-controls="soggetti" aria-selected="true" style="color: #BBBCBC; font-weight:500;">Soggetti</a></li>
+            <li class="nav-item"><a class="nav-link" id="responsabili-tab" data-toggle="tab" href="#responsabili" role="tab" aria-controls="responsabili" aria-selected="false" style="">Responsabili</a></li>
         </ul>
         <div class="tab-content" id="content_sectionSoggetti_pratiche">
             <!-- TAB SOGGETTI -->
@@ -98,7 +97,7 @@
                  </div>
                     
                 </div>
-
+                <div class="mt-5" style="border:1px solid #F2F2F2; background-color:#F2F2F2; height:30px; width:110.9%; position:relative; left:-70px; "></div><!-- Gray separator-->
                 <div class="mt-5"> <!-- Contatti dei responsabili -->
                     <h6>Contatti dei responsabili</h6>
                     <div class="row">
@@ -115,6 +114,7 @@
                     </div>
                 </div>
 
+                <div class="mt-5" style="border:1px solid #F2F2F2; background-color:#F2F2F2; height:30px; width:110.9%; position:relative; left:-70px; "></div><!-- Gray separator-->
                 <div class="mt-5"> <!-- Dettaglio importi -->
                     <div class="row">
                         <div class="col-md">
@@ -130,6 +130,8 @@
         <!-- FINE Pagina SOGGETTI  PRATICHE -->
 
             </div>
+
+
             <!-- END TAB SOGGETTI -->
 
             <!-- TAB RESPONSABILI -->
@@ -174,6 +176,7 @@
             </div>
          </div>
 
+         <div class="mt-5" style="border:1px solid #F2F2F2; background-color:#F2F2F2; height:30px; width:110.9%; position:relative; left:-70px; "></div><!-- Gray separator-->
          <div class="mt-5"> <!-- Contatti dei responsabili -->
              <h6>Contatti dei responsabili</h6>
              <div class="row">
@@ -190,6 +193,7 @@
              </div>
          </div>
 
+         <div class="mt-5" style="border:1px solid #F2F2F2; background-color:#F2F2F2; height:30px; width:110.9%; position:relative; left:-70px; "></div><!-- Gray separator-->
          <div class="mt-5"> <!-- Dettaglio importi -->
              <div class="row">
                  <div class="col-md">
@@ -204,6 +208,13 @@
         </div> <!-- FINE Pagina RESPONSABILI  PRATICHE -->
 
             </div>
+    </div>
+    
+        </div>
+    </div>{{-- chiusura div content-main praticeNav --}}
+    <div class="box-fixed">
+        <button class="back-button mr-2">Annulla</button>
+        <button class="add-button">Conferma</button>
     </div>
 
 @endsection
