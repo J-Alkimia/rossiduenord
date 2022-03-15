@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+input {
+  font-weight: 600;
+}
+
 nav {
   width: 15%;
   height: 100vh;
@@ -70,6 +74,20 @@ a:hover {
   border: 1px solid #707070;
 }
 
+.btn-delete {
+  width: 87px;
+  height: 27px;
+  border: none;
+  font-weight: 600;
+  background-color: #E4003C;
+  color: white;
+}
+.btn-delete:hover {
+  background-color: white;
+  color: #E4003C;
+  border: 1px solid #E4003C;
+}
+
 #select-all:hover {
   background-color: black;
 }
@@ -121,7 +139,7 @@ a:hover {
 }
 
 .grey {
-  color: #818387;
+  color: #818387 !important;
 }
 
 .light-grey {
@@ -134,6 +152,10 @@ a:hover {
 
 .text-md {
   font-size: 17px;
+}
+
+.font-500 {
+  font-weight: 500;
 }
 
 .popup {
@@ -327,6 +349,24 @@ label {
 .dati_progetto label {
   color: #211e16 !important;
   font-weight: 400 !important;
+}
+
+.scroll {
+  overflow-y: auto;
+  height: 100vh;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.select {
+  content: url("../../img/icon/arrow_down.svg");
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  right: 5px;
+  top: 15px;
+  background-color: #f2f2f2;
 }
 
 header {

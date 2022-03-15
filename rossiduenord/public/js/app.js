@@ -49801,23 +49801,33 @@ var app = new Vue({
   data: {
     showDati: false,
     showInterventi: false,
-    showInterventi2: true
+    showInterventi2: false,
+    showState: true
   },
   methods: {
     showpage1: function showpage1() {
       this.showDati = true;
       this.showInterventi = false;
       this.showInterventi2 = false;
+      this.showState = false;
     },
     showpage2: function showpage2() {
       this.showDati = false;
       this.showInterventi = true;
       this.showInterventi2 = false;
+      this.showState = false;
     },
     showpage3: function showpage3() {
       this.showDati = false;
       this.showInterventi = false;
       this.showInterventi2 = true;
+      this.showState = false;
+    },
+    showpage4: function showpage4() {
+      this.showDati = false;
+      this.showInterventi = false;
+      this.showInterventi2 = false;
+      this.showState = true;
     }
   }
 });
