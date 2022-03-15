@@ -387,7 +387,6 @@ main {
 .content-main .box {
   background-color: white;
   width: 100%;
-  padding: 20px;
   margin-top: 20px;
   margin-bottom: 80px;
 }
@@ -433,6 +432,14 @@ main {
   position: fixed;
   bottom: 0;
   box-shadow: 4px 2px 10px -5px;
+}
+
+.px-20 {
+  padding: 0 20px;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
 }
 
 .btn-login {

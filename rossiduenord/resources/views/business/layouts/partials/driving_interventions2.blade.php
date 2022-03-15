@@ -1,13 +1,15 @@
-<h6>Interventi trainanti +</h6>
-<hr style="margin-top: 5px; background-color: #211e16;">
-
-<p class="m-0">Interventi trainanti oggetto dei lavori</p>
-<hr style="margin-top: 5px; background-color: #818387;">
+<div class="px-20">
+    <h6>Interventi trainanti +</h6>
+    <hr style="margin-top: 5px; background-color: #211e16;">
+    
+    <p class="m-0">Interventi trainanti oggetto dei lavori</p>
+    <hr style="margin-top: 5px; background-color: #818387;">
+</div>
 
 <div class="d-flex" style="font-weight: 500">
 
-    <div class="px-2 border-right" style="width: 20%">{{-- column left --}}
-        <div class="d-flex align-items-center py-2">
+    <div class="px-20 border-right" style="width: 20%">{{-- column left --}}
+        <div class="d-flex align-items-center pb-2 pt-0">
             <img src="{{ asset('/img/icon/round-yellow.svg')}}" alt="">
             <p class="m-0 ml-2 font-weight-bold">Parti comuni</p>
         </div>
@@ -45,7 +47,7 @@
         </div>
     </div>
 
-    <div style="width: 80%" class="py-2 px-4 scroll">{{-- column right --}}
+    <div style="width: 80%" class="pb-20 px-4 scroll">{{-- column right --}}
 
         <div>{{-- 1. Intervento di isolamento termico delle superfici opache verticali e orizzontali --}}
             <label class="checkbox-wrapper d-flex">

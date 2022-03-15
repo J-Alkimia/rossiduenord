@@ -1,6 +1,9 @@
-<h6>Dati di Progetto</h6>
-<hr style="margin-top: 5px; background-color: #211e16;">
-<div class="dati_progetto">
+<div class="px-20">
+    <h6>Dati di Progetto</h6>
+    <hr style="margin-top: 5px; background-color: #211e16;">
+</div>
+
+<div class="dati_progetto px-20 pb-20">
     <div class="d-flex">
         <p>È stata depositata la relazione tecnica prevista dall’art. 28 della legge 10/91 e dall’art. 8 comma 1 del D.lgs 192/05 e successive modificazioni</p>
         <label for="" style="margin-left: 20px">
