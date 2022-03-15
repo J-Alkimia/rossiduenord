@@ -49,6 +49,10 @@ a:hover {
   background-color: #383d3f;
 }
 
+#soggetti-tab:hover {
+  color: #61A4D7;
+}
+
 .back-button {
   background-color: #818387;
   padding: 10px 20px;
@@ -353,7 +357,7 @@ label {
 
 .scroll {
   overflow-y: auto;
-  height: 100vh;
+  height: 60vh;
 }
 .scroll::-webkit-scrollbar {
   display: none;
@@ -367,6 +371,10 @@ label {
   right: 5px;
   top: 15px;
   background-color: #f2f2f2;
+}
+
+#soggetti-tab {
+  color: #2196F3 !important;
 }
 
 header {
@@ -440,6 +448,10 @@ main {
 
 .pb-20 {
   padding-bottom: 20px;
+}
+
+.pt-20 {
+  padding-top: 20px;
 }
 
 .btn-login {

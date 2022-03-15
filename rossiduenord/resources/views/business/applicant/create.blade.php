@@ -5,7 +5,7 @@
     @include('business.layouts.partials.message')
     @include('business.layouts.partials.practiceNav')
 
-            <form action="{{ route('business.applicant.store') }}" method="POST">
+            <form class="px-20 pb-20" action="{{ route('business.applicant.store') }}" method="POST">
                 @csrf
                 <div class="d-flex align-items-center">
                     <h6 style="color: #61a4d7; text-decoration:underline;">Richiedente</h6>

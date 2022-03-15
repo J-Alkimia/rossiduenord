@@ -5,9 +5,12 @@
     @include('business.layouts.partials.message')
     @include('business.layouts.partials.practiceNav')
 
-    <h6><b>Dati Immobile</b></h6>
-    <hr style="margin-top: 5px; background-color: #211e16;">
-    <div>
+    <div class="px-20">
+        <h6><b>Dati Immobile</b></h6>
+        <hr style="margin-top: 5px; background-color: #211e16;">
+    </div>
+    
+    <div class="px-20 pb-20">
 
         <form style="margin-bottom:20px;" >
             <div class="form-group">

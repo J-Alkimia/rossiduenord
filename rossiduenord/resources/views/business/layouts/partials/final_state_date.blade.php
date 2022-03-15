@@ -10,7 +10,7 @@
         <div class="form-group">
             <label for="" class="grey">Tipo di impianto</label>
             <div class="position-relative">
-                <div class="select"></div>
+                <div class="select"/>
                 <select class="form-control px-3" style="background-color: #f2f2f2" name="" id="">
                     <option value=""></option>
                 </select>
@@ -19,7 +19,7 @@
         <div class="form-group">
             <label for="" class="grey">Terminali di erogazione del calore</label>
             <div class="position-relative">
-                <div class="select"></div>
+                <div class="select"/>
                 <select class="form-control px-3" style="background-color: #f2f2f2" name="" id="">
                     <option value=""></option>
                 </select>
@@ -28,7 +28,7 @@
         <div class="form-group">
             <label for="" class="grey">Tipo di distribuzione</label>
             <div class="position-relative">
-                <div class="select"></div>
+                <div class="select"/>
                 <select class="form-control px-3" style="background-color: #f2f2f2" name="" id="">
                     <option value=""></option>
                 </select>
@@ -37,7 +37,7 @@
         <div class="form-group">
             <label for="" class="grey">Tipo di regolazione</label>
             <div class="position-relative">
-                <div class="select"></div>
+                <div class="select"/>
                 <select class="form-control px-3" style="background-color: #f2f2f2" name="" id="">
                     <option value=""></option>
                 </select>

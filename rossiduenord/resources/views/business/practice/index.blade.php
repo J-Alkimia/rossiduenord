@@ -16,7 +16,7 @@
 
     <div class="content-main" style="padding-top: 0px;">
 
-        <div class="box">
+        <div class="box px-20 pt-20" >
             <span style="margin-right: 20px" class="black text-md {{Route::currentRouteName() == 'business.practice.index' ? 'bold' : ''}}">
                 Lista Pratiche
             </span>
