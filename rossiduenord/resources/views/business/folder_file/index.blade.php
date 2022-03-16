@@ -1,6 +1,19 @@
 @extends('business.layouts.business')
 
 @section('content')
+
+      <script>
+            $(document).ready(function(){
+            $("#searchFolder").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#table_ContentListFolder tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+            });
+        </script>
+
+
     <div class="content-main">
         @if(session('message'))
             <div class="alert alert-success" role="alert">
@@ -27,7 +40,7 @@
                         <button id="select-delete" class="btn-custom bg-red white">Elimina selezionato</button>
                     </div>
                     <form action="" method="POST" class="position-relative w-25">
-                        <input class="search" type="text" placeholder="Cerca" name="" id="">
+                        <input class="search" type="text" placeholder="Cerca" name="" id="searchFolder">
                         <img class="img-search" src="{{ asset('/img/icon/ICONA-CERCA.svg')}}" alt="">
                     </form>
                 </div>
@@ -44,7 +57,7 @@
                                 <th style="width: 350px"></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="table_ContentListFolder">
                             @foreach($folders as $folder)
                             <tr>
                                 <td style="border-left: 1px solid #707070">
