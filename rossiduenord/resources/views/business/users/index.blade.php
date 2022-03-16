@@ -1,6 +1,18 @@
 @extends('business.layouts.business')
 
 @section('content')
+
+    <script>
+        $(document).ready(function(){
+        $("#searchUser").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#table_ContentList tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+        });
+    </script>
+
     <div class="content-main">
         @if(session('message'))
             <div class="alert alert-success" role="alert">
@@ -27,7 +39,7 @@
                         <button id="select-delete" class="btn-custom bg-red white">Elimina selezionato</button>
                     </div>
                     <div class="position-relative w-25">
-                        <input class="search" type="search" placeholder="Cerca" name="" id="">
+                        <input class="search" type="search" placeholder="Cerca" name="" id="searchUser">
                         <img class="img-search" src="{{ asset('/img/icon/ICONA-CERCA.svg')}}" alt="">
                     </div>
                 </div>
@@ -45,7 +57,7 @@
                                 <th style="width: 22%"></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="table_ContentList" >
                             @foreach($users as $user)
                             <tr>
                                 <td style="border-left: 1px solid #707070">
