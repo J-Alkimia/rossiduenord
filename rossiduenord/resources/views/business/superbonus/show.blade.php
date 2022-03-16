@@ -10,7 +10,8 @@
                 <span @click="showpage2" :class="[showInterventi ? 'frame' : ''] ">Interventi trainanti</span>
                 <span @click="showpage3" :class="[showInterventi2 ? 'frame' : ''] ">Interventi trainanti +</span>
                 <span @click="showpage4" :class="[showState ? 'frame' : ''] ">Dati stato finale</span>
-                <span>Tot. Spese e Dichiarazioni</span>
+                {{-- Prova push  --}}
+                <span >Tot. Spese e Dichiarazioni</span>
                 <span>Varianti</span>
             </div>
 
