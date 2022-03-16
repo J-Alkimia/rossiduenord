@@ -49,10 +49,6 @@ a:hover {
   background-color: #383d3f;
 }
 
-#soggetti-tab:hover {
-  color: #61A4D7;
-}
-
 .back-button {
   background-color: #818387;
   padding: 10px 20px;
@@ -148,6 +144,10 @@ a:hover {
 
 .light-grey {
   color: #BBBCBC;
+}
+
+.blue {
+  color: #61a4d7 !important;
 }
 
 .text-sm {
@@ -344,8 +344,8 @@ label {
   border: 1px solid #BBBCBC;
   border-bottom: 0;
   background-color: white;
-  padding: 10px 20px 3px;
-  color: #61a4d7;
+  padding: 10px 20px 3px !important;
+  color: #61a4d7 !important;
   z-index: 1;
   margin-bottom: -1px;
 }
@@ -373,8 +373,14 @@ label {
   background-color: #f2f2f2;
 }
 
-#soggetti-tab {
-  color: #2196F3 !important;
+.frame {
+  border: 1px solid #BBBCBC !important;
+  border-bottom: 0 !important;
+  background-color: white;
+  padding: 10px 20px 7px !important;
+  color: #61a4d7 !important;
+  z-index: 1;
+  margin-bottom: -1px !important;
 }
 
 header {

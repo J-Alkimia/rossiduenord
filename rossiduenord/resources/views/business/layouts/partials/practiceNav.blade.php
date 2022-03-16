@@ -74,8 +74,12 @@
                 <a href="{{route('business.practice.create') }}" class="{{Route::currentRouteName() == 'business.practice.create' ? 'visited' : ''}}">
                     PRATICA
                 </a>
-                <a href="{{route('business.test3') }}">SOGGETTI E IMPORTI</a>
-                <a href="{{route('business.test2') }}" >IMMOBILE</a>
+                <a href="{{route('business.test3') }}" class="{{Route::currentRouteName() == 'business.test3' ? 'visited' : ''}}">
+                    SOGGETTI E IMPORTI
+                </a>
+                <a href="{{route('business.test2') }}" class="{{Route::currentRouteName() == 'business.test2' ? 'visited' : ''}}">
+                    IMMOBILE
+                </a>
                 <a href="">FOTO DA APP</a>
                 <a href="">DOCUMENTI RICHIESTI</a>
                 <a href="{{route('business.superbonus.index') }}" class="{{Route::currentRouteName() == 'business.superbonus.index' ? 'visited' : ''}}">

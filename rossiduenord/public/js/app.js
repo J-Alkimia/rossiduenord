@@ -49802,7 +49802,8 @@ var app = new Vue({
     showDati: false,
     showInterventi: false,
     showInterventi2: false,
-    showState: true
+    showState: true,
+    active: true
   },
   methods: {
     showpage1: function showpage1() {
