@@ -4,11 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-const { default: Axios } = require('axios');
+const { default: Axios } = require("axios");
 
-require('./bootstrap');
+require("./bootstrap");
 
-window.Vue = require('vue');
+window.Vue = require("vue");
 
 /**
  * The following block of code may be used to automatically register your
@@ -21,7 +21,10 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component(
+    "example-component",
+    require("./components/ExampleComponent.vue").default
+);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -30,41 +33,51 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app',
+    el: "#app",
     data: {
         showDati: false,
         showInterventi: false,
         showInterventi2: false,
-        showState: true, 
-        active: true
+        showState: true,
+        showFees: false,
+        active: true,
     },
 
     methods: {
         showpage1() {
             this.showDati = true;
-            this.showInterventi = false
-            this.showInterventi2 = false
-            this.showState = false
+            this.showInterventi = false;
+            this.showInterventi2 = false;
+            this.showState = false;
+            this.showFees = false;
         },
         showpage2() {
             this.showDati = false;
-            this.showInterventi = true
-            this.showInterventi2 = false
-            this.showState = false
+            this.showInterventi = true;
+            this.showInterventi2 = false;
+            this.showState = false;
+            this.showFees = false;
         },
         showpage3() {
             this.showDati = false;
-            this.showInterventi = false
-            this.showInterventi2 = true
-            this.showState = false
+            this.showInterventi = false;
+            this.showInterventi2 = true;
+            this.showState = false;
+            this.showFees = false;
         },
         showpage4() {
             this.showDati = false;
-            this.showInterventi = false
-            this.showInterventi2 = false
-            this.showState = true
-        }
-
-
-    }
+            this.showInterventi = false;
+            this.showInterventi2 = false;
+            this.showState = true;
+            this.showFees = false;
+        },
+        showFeesPage() {
+            this.showDati = false;
+            this.showInterventi = false;
+            this.showInterventi2 = false;
+            this.showState = false;
+            this.showFees = true;
+        },
+    },
 });
