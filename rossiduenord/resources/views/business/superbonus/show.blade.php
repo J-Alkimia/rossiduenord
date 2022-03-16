@@ -10,8 +10,7 @@
                 <span @click="showpage2" :class="[showInterventi ? 'frame' : ''] ">Interventi trainanti</span>
                 <span @click="showpage3" :class="[showInterventi2 ? 'frame' : ''] ">Interventi trainanti +</span>
                 <span @click="showpage4" :class="[showState ? 'frame' : ''] ">Dati stato finale</span>
-                {{-- Prova push  --}}
-                <span >Tot. Spese e Dichiarazioni</span>
+                <span @click="showFeesPage" :class="[showFees ? 'frame' : ''] " >Tot. Spese e Dichiarazioni</span>
                 <span>Varianti</span>
             </div>
 
@@ -29,6 +28,10 @@
 
             <div v-if="showState">
                 @include('business.layouts.partials.final_state_date')
+            </div>
+
+            <div v-if="showFees">
+                @include('business.layouts.partials.fees_declarations')
             </div>
 
         </div>{{-- chiusura div box praticeNav--}}
