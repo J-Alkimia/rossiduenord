@@ -22,7 +22,7 @@
                 
             </div>
             {{-- second row --}}
-            <div class="row">
+            <div class="row py-3">
                 <div class="col-5">
                     <p>Costo complessivo degli interventi trainanti realizzati ammontano a <br>   (compreso importo trainati parti comini) </p>
                 </div>
@@ -86,7 +86,7 @@
             
         </div>
         {{-- second row --}}
-        <div class="row">
+        <div class="row py-3">
             <div class="col-5">
                 <p>Costo complessivo degli interventi trainanti realizzati ammonta a</p>
             </div>
@@ -138,7 +138,7 @@
         {{-- first row --}}
         <div class="row">
             <div class="col-12 d-flex">
-                <p>L'importo degli interventi trainati di progetto ammonata a </p>
+                <b>L'importo degli interventi trainati di progetto ammonata a </b>
                 <label for="" class=" m-0 mr-4 black">
                     <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
                     €
@@ -148,30 +148,30 @@
             
         </div>
         {{-- second row --}}
-        <div class="row">
+        <div class="row py-3">
             <div class="col-5">
-                <p>L'importo degli interventi realizzati corrisponde a </p>
+                <b>L'importo degli interventi realizzati corrisponde a </b>
             </div>
-            <div class="col-7 d-flex flex-wrap">
+            <div class="col-7 d-flex flex-wrap py-3">
                 <div class="m-1">
                     <label for="" class=" m-0 black">
-                        <span>Sal n.1</span>
+                        <b>Sal n.1</b>
                         <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
-                        <span>€</span>
+                        <b>€</b>
                     </label>
                 </div>
                 <div class="m-1">
                     <label for="" class=" m-0 black">
-                        <span>Sal n.2</span>
+                        <b>Sal n.2</b>
                         <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
-                        <span>€</span>
+                        <b>€</b>
                     </label>
                 </div>
                 <div class="m-1">
                     <label for="" class=" m-0 black">
-                        <span>Sal n.F</span>
+                        <b>Sal n.F</b>
                         <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
-                        <span>€</span>
+                        <b>€</b>
                     </label>
                 </div>
             </div>
@@ -201,7 +201,7 @@
         {{-- first row --}}
         <div class="row">
             <div class="col-12 d-flex">
-                <p>L'importo degli interventi di progetto ammonta a</p>
+                <b>L'importo degli interventi di progetto ammonta a</b>
                 <label for="" class=" m-0 mr-4 black">
                     <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
                     €
@@ -211,30 +211,30 @@
             
         </div>
         {{-- second row --}}
-        <div class="row">
+        <div class="row py-3">
             <div class="col-5">
-                <p>L'importo degli interventi realizzati ammonta a</p>
+                <b>L'importo degli interventi realizzati ammonta a</b>
             </div>
             <div class="col-7 d-flex flex-wrap">
                 <div class="m-1">
                     <label for="" class=" m-0 black">
-                        <span>Sal n.1</span>
+                        <b>Sal n.1</b>
                         <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
-                        <span>€</span>
+                        <b>€</b>
                     </label>
                 </div>
                 <div class="m-1">
                     <label for="" class=" m-0 black">
-                        <span>Sal n.2</span>
+                        <b>Sal n.2</b>
                         <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
-                        <span>€</span>
+                        <b>€</b>
                     </label>
                 </div>
                 <div class="m-1">
                     <label for="" class=" m-0 black">
-                        <span>Sal n.F</span>
+                        <b>Sal n.F</b>
                         <input type="text" value="" style="width: 120px; background-color: #f2f2f2" class="border ml-2 px-2 text-right">
-                        <span>€</span>
+                        <b>€</b>
                     </label>
                 </div>
             </div>
