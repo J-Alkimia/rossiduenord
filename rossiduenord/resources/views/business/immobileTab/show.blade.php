@@ -19,11 +19,14 @@
                         </div>
 
                         <div class="form-group">
-                        <label style="display:inline-block;" >Ruolo dell'impresa</label>
-                        <select id="companyRole" class="col-md" name="roles" style="height:40px; border-radius:2px; border:1px solid #DBDCDB; background-color: #F2F2F2;" disabled>
-                        <option value="">Ruolo corrente</option>
-                        <option value="">Altro ruolo</option>
-                        </select>
+                            <label style="display:inline-block;" >Ruolo dell'impresa</label>
+                            <div class="position-relative">
+                                <div class="select"></div>
+                                <select id="companyRole" class="col-md" name="roles" style="height:40px; border-radius:2px; border:1px solid #DBDCDB; background-color: #F2F2F2;">
+                                    <option value="">Ruolo corrente</option>
+                                    <option value="">Altro ruolo</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     
@@ -143,10 +146,13 @@
                             </div>
                             <div class="form-group"> 
                                 <label style="display:inline-block;" >Tipo condominio</label>
+                                <div class="position-relative">
+                                    <div class="select"></div>
                                     <select id="companyRole" class="col-md" name="roles" style="height:40px; border-radius:2px; border:1px solid #DBDCDB; background-color: #F2F2F2;" disabled>
-                                    <option value=""> </option>
-                                    <option value="">Altro ruolo</option>
-                                </select>
+                                        <option value=""> </option>
+                                        <option value="">Altro ruolo</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
@@ -168,10 +174,13 @@
                                     </div>
                                     <div style="width: 200px">
                                         <label>Regione</label>
-                                        <select id="companyRole" class="col-md" name="roles" style="height:40px; border-radius:2px; border:1px solid #DBDCDB; background-color: #F2F2F2;" disabled>
-                                            <option value=""> </option>
-                                            <option value="">Altro ruolo</option>
-                                        </select>
+                                        <div class="position-relative">
+                                            <div class="select"></div>
+                                            <select id="companyRole" class="col-md" name="roles" style="height:40px; border-radius:2px; border:1px solid #DBDCDB; background-color: #F2F2F2;" disabled>
+                                                <option value=""> </option>
+                                                <option value="">Altro ruolo</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div style="width: 150px"> 
                                         <label>CAP</label>
@@ -185,10 +194,13 @@
                             </div>
                             <div class="form-group"> 
                                 <label style="display:inline-block;" >Zona</label>
-                                    <select id="companyRole" class="col-md" name="roles" style="height:40px; border-radius:2px; border:1px solid #DBDCDB; background-color: #F2F2F2;" disabled>
-                                    <option value=""> </option>
-                                    <option value="">Altro ruolo</option>
-                                </select>
+                                <div class="position-relative">
+                                    <div class="select"></div>
+                                        <select id="companyRole" class="col-md" name="roles" style="height:40px; border-radius:2px; border:1px solid #DBDCDB; background-color: #F2F2F2;" disabled>
+                                        <option value=""> </option>
+                                        <option value="">Altro ruolo</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>

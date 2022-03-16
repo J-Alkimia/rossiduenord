@@ -371,6 +371,7 @@ label {
   right: 5px;
   top: 15px;
   background-color: #f2f2f2;
+  z-index: 1;
 }
 
 .frame {
